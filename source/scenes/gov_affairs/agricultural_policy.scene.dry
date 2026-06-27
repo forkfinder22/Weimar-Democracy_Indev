@@ -15,6 +15,8 @@ While agricultural policy has historically not been the domain of the SPD, there
 - @agricultural_finance
 - @pro_consumer
 - @state_buyer
+- @price_controls
+- @price_floors
 - @root: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -55,3 +57,13 @@ on-arrival: budget -= 2; state_buyer = 1; rural_spd += 5*(1-dissent); rural_nsda
 max-visits: 1
 
 Our new purchasing agency guarantees fair prices for farmers, while also providing lower food prices for workers and the urban poor. This policy necessitates heavy spending and an unprecedented level of state intervention in the economy, raising the ire of conservative economists.
+
+@price_controls
+title: Institute price controls on agricultural goods
+
+worker happy, rural sad, agr_cc down, blah blah
+
+@price_floors
+title: Institute prixe floors on agricultural goods
+
+rural happy worker sad agrcc up, etc
