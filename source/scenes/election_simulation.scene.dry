@@ -349,6 +349,8 @@ RLB: [+ rlb_r +]
 
 SLV: [+ slv_r +]
 
+DHP: [+ dhp_r +]
+
 VRP: [+ vrp_r +]
 
 WP: [+ wp_r +]

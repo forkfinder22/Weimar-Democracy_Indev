@@ -567,7 +567,25 @@ table {
     fill: #954B00;
 }
 .seat.dbp {
-  fill: #097100
+  fill: #097100;
+}
+.seat.cnblp {
+  fill: #7FCEB1;
+}
+.seat.rlb {
+  fill: #598856;
+}
+.seat.slv {
+  fill: #0a8e0a;
+}
+.seat.dhp {
+  fill: #79b175;
+}
+.seat.vrp {
+  fill: #0076ea;
+}
+.seat.wp {
+  fill: #b8996f;
 }
 .seat.sapd {
     fill: #C40000;
