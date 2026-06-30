@@ -231,12 +231,6 @@ data = data.concat([
         "seats": Math.round(Q.dvp_r*5),
     },
     {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*5),
-    },
-    {
         "id": "dnvp",
         "legend": "DNVP",
         "name": "DNVP",
@@ -247,6 +241,48 @@ data = data.concat([
         "legend": "NSDAP",
         "name": "NSDAP",
         "seats": Math.round(Q.nsdap_r*5),
+    },
+    {
+    "id": "dbp",
+    "legend": "DBP",
+    "name": "DBP",
+    "seats": Math.round(Q.dbp_r*5),
+    },
+    {
+    "id": "cnblp",
+    "legend": "CNBLP",
+    "name": "CNBLP",
+    "seats": Math.round(Q.cnblp_r*5),
+    },
+    {
+    "id": "rlb",
+    "legend": "RLB",
+    "name": "RLB",
+    "seats": Math.round(Q.rlb_r*5),
+    },
+    {
+    "id": "slv",
+    "legend": "SLV",
+    "name": "SLV",
+    "seats": Math.round(Q.slv_r*5),
+    },
+    {
+    "id": "dhp",
+    "legend": "DHP",
+    "name": "DHP",
+    "seats": Math.round(Q.dhp_r*5),
+    },
+    {
+    "id": "vrp",
+    "legend": "VRP",
+    "name": "VRP",
+    "seats": Math.round(Q.vrp_r*5),
+    },
+    {
+    "id": "wp",
+    "legend": "WP",
+    "name": "WP",
+    "seats": Math.round(Q.wp_r*5),
     },
 ]);
 
