@@ -1,0 +1,48 @@
+title: Leon Kopp
+is-pinned-card: true
+tags: advisor, agsoc
+card-image: img/portraits/BaadeFritz.jpg
+view-if: kopp_advisor = 1
+new-page: true 
+
+= Leon Kopp
+
+Leon Kopp is an <span style="color: #228B22;">Agrarian</span> <span style="color: #c90000;">Socialist</span>, is our main campaign strategist among rural regions, and can improve our relations with the Rural parties
+
+- @agriculture_union
+- @rural_campaign
+- @rural_relations
+- @root: Return to main
+
+@agriculture_union
+title: Agricultural Organising
+subtitle: Leon Kopp can help with attracting farmworkers to rural unions.
+choose-if: advisor_action_timer <= 0 and (rural_policy > 0 or rural_campaigned >= 1)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_campaigned <= 0 : The <span style="color: #c00000;">SPD</span> has not campaigned enough among the rural populace. ?]
+on-arrival: advisor_action_timer = 6
+
+We have organised farmworkers across Germany, which has also bolstered our influence among the trade unions
+
+@rural_campaign
+title: Rural Campaign
+subtitle: Try to campaign among the rural populace.
+choose-if: advisor_action_timer == 0 and rural_policy > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
+on-arrival: advisor_action_timer = 6; rural_spd += 6*(1-dissent)*((rural_reach*2)+1); peoples_party_support += 1; agr_cc += 1
+
+We have increased our campaigning among farmers and the rural populace.
+
+@rural_relations
+title: Rural Relations
+subtitle: Leon Kopp can use his connections to move the rural parties closer to the left - or at least, to the <span style=" color: #c90000;">SPD</span>
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: {!
+Q.advisor_action_timer = 6;
+if (!Q.rural_relations_unlocked) {
+    Q.rural_relations_unlocked = 1;
+}
+// add a feature that increases X party left by (party_relation/10), minus 3. This would only happen if the party's relation was greater than 40, to prevent a reduction in _left 
+!}
+
+We have improved relations with the rural parties, such as the CNBLP, DBP, and minor regional parties and associations, like the DHP (Deutsche Hannoversche Partei/German Hannoverian Party), SLV (Sächsisches Landvolk/Saxon Peasants), or RB (Rheinischer Bauernverein/Rhenish Agricultural League) 

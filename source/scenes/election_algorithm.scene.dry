@@ -1,5 +1,13 @@
 title: Election
 on-arrival: {!
+// Tells if there is a typo causing an undefined
+for (var c of Q.classes) {
+    for (var party of Q.parties) {
+        if (Q[c+'_'+party] === undefined) {
+            throw new Error('Missing value: ' + c + '_' + party);
+        }
+    }
+}
 // calculate normalized class voting amounts (0 to 100)
 for (var c of Q.classes) {
     var class_votes = 0;
@@ -46,8 +54,8 @@ for (var party of Q.parties) {
         Q[party+'_votes'] = Q[party+'_votes_dec'];
         Q[party + '_votes_disp'] = Q[party+'_votes'];
     } else {
-        Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
-        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
+        Q[party+'_votes'] = Math.round(Q[party+'_normalized']*1000)/10;
+        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(3);
     }
     //Q[party+'_votes'] = Q[party+'_votes_dec'];
     // display

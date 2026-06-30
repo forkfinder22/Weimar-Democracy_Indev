@@ -1,0 +1,47 @@
+title: Adler Schwarz
+is-pinned-card: true
+tags: advisor, agsoc
+card-image: img/portraits/BaadeFritz.jpg
+view-if: schwarz_advisor = 1
+new-page: true 
+
+### wip: Agrarian socialist advisor
+### Action: Awaken the clas-consciouness of the Peasant class
+### Action: Agriculture Govenrment Card
+### Action: Strengthen the Rural faction and reduce its dissent
+
+= Adler Schwarz
+
+Adler Schwarz is the leading Agrarian Socialist theorist within the <span style=" color:#c90000;">SPD</span>
+
+- @agsoc_plan
+- @agriculture
+- @rural_faction
+- @root: Return to main
+
+@agsoc_plan
+title: Increase support for the Agrarian-Socialist plan
+subtitle: Schwarz is our lead Agrarian Socialist theorist
+choose-if: advisor_action_timer <= 0 and never
+view-if: (year >= 1930 and month >= 6) or year >= 1931
+unavailable-subtitle: [? if advisor_action_timer <= 0 : [+ advisor_action_timer +] months before next advisor action ?] - Not implemented
+on-arrival: agsoc_plan_support += 1; rural_strength += 7; rural_dissent -= 5
+
+We have sucessfully fostered Class consciousness in the New Middle Class, and pushed the Economic-Liberal left.
+
+@agriculture
+title: Agricultural Policy
+subtitle: Schwarz is close to the agricultural minister, Baade.
+choose-if: advisor_action_timer <= 0 and spd_in_government and agriculture_minister_party == "SPD"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if agriculture_minister_party != "SPD": The <span style="color: #c00000;">SPD</span> does not have the Agriculture Ministry. ?]
+on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
+go-to: agricultural_policy
+
+@rural_faction
+title: Strength the Agrarian Socialists
+subtitle: Schwarz holds a lot of influence among the Agrarian Socialists. Strengthening the Agrarian Socialists will make the Agrarian-Conservative parties more receptive to us.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [+ advisor_action_timer +] months before next advisor action
+on-arrival: advisor_action_timer = 6; rural_strength += 8; rural_dissent -= 5; rural_nsdap -= 0.25; rural_others += 0.25; cnblp_left += 0.5; dhp_left += 0.5; dbp_left += 0.5; others_left += 0.5; dhp_relation += 2; dbp_relation += 3; cnblp_relation += 1; others_relation += 2
+
+We have strengthened the Agrarian Socialists

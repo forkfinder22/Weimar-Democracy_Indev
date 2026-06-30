@@ -1,0 +1,23 @@
+title: A new faction?
+subtitle: Our Rural base is growing stronger
+tags: event
+on-arrival: agsoc_formed_seen = 1
+new-page: true
+view-if: agsoc_formed_seen = 0 and rural_spd >= 17 and agr_awakened > 0
+
+= A New Agrarian Faction
+
+With our ever-growing rural base, an emerging current of "Agrarian Socialism" has grown within our party, with key figures including Fritz Baade, Leon Kopp, Conrad Kraus, and Adler Schwarz. How should we deal with this?
+  
+- @accept: We are committed to representing every proletarian. Encourage Agrarian representation!
+- @decline: We are a party of the industrial working class. The rural class is not our concern, even if many of its members vote for us.
+
+@accept
+on-arrival: agrarian_socialism = 1; rural_spd += 5; new_middle_spd -= 1; old_middle_spd -= 1; workers_spd -= 3;
+
+The Agrarian-Socialist faction has been formed! It's leaders compose of Fritz Baade, our most experienced Agricultural advisor, Leon Kopp, a skilled rural campaigner, Conrad Kraus, a rural union organiser, and Adler Schwarz, a long-time orator and politican
+
+@decline
+on-arrival: rural_spd -= 7; workers_spd += 1;
+
+We have rejected the notion of "Agricultural Socialism". Our rural base is not pleased.

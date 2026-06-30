@@ -5,7 +5,6 @@ priority: -1
 view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
 on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; papen_chancellor_timer = 4;
 set-jump: post_election_1928
-face-image: img/Rothe_Wahlen_1903.jpg
 
 # TODO: should there be an image?
 
@@ -101,16 +100,16 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
 // coalitions
 Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r - 3;
 Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
-Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.right_coalition = Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
+Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r;
+Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.dnvp_r;
+Q.right_coalition = Q.z_r + Q.dvp_r + Q.dnvp_r;
 Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
 Q.left_coalition = Q.spd_r + Q.kpd_r + Q.sapd_r;
 // this is an absurd concept lol
 Q.popular_front_coalition = Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r;
 Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r + Q.dnvp_r;
 // aka everyone except nazi, kpd, dnvp
-Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
+Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
 Q.hitler_right_coalition = Q.z_r + Q.dnvp_r + Q.nsdap_r;
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
@@ -231,12 +230,6 @@ data = data.concat([
         "seats": Math.round(Q.dvp_r*5),
     },
     {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*5),
-    },
-    {
         "id": "dnvp",
         "legend": "DNVP",
         "name": "DNVP",
@@ -247,6 +240,48 @@ data = data.concat([
         "legend": "NSDAP",
         "name": "NSDAP",
         "seats": Math.round(Q.nsdap_r*5),
+    },
+    {
+        "id": "dbp",
+        "legend": "DBP",
+        "name": "DBP",
+        "seats": Math.round(Q.dbp_r*5),
+    },
+    {
+        "id": "cnblp",
+        "legend": "CNBLP",
+        "name": "CNBLP",
+        "seats": Math.round(Q.cnblp_r*5),
+    },
+    {
+        "id": "rlb",
+        "legend": "RLB",
+        "name": "RLB",
+        "seats": Math.round(Q.rlb_r*5),
+    },
+    {
+        "id": "slv",
+        "legend": "SLV",
+        "name": "SLV",
+        "seats": Math.round(Q.slv_r*5),
+    },
+    {
+        "id": "dhp",
+        "legend": "DHP",
+        "name": "DHP",
+        "seats": Math.round(Q.dhp_r*5),
+    },
+    {
+        "id": "vrp",
+        "legend": "VRP",
+        "name": "VRP",
+        "seats": Math.round(Q.vrp_r*5),
+    },
+    {
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_r*5),
     },
 ]);
 
@@ -289,7 +324,19 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#097100'> </div> !} DBP: {!</td><td>!} [+ dbp_r +] % {!</td><td>!} [+ str_change_dbp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#7FCEB1'> </div> !} CNBLP: {!</td><td>!} [+ cnblp_r +] % {!</td><td>!} [+ str_change_cnblp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#598856'> </div> !} RLB: {!</td><td>!} [+ rlb_r +] % {!</td><td>!} [+ str_change_rlb +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#0a8e0a'> </div> !} SLV: {!</td><td>!} [+ slv_r +] % {!</td><td>!} [+ str_change_slv +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#79b175'> </div> !} DHP: {!</td><td>!} [+ dhp_r +] % {!</td><td>!} [+ str_change_dhp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#0076ea'> </div> !} VRP: {!</td><td>!} [+ vrp_r +] % {!</td><td>!} [+ str_change_vrp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_r +] % {!</td><td>!} [+ str_change_wp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3f7bc1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
 
@@ -302,9 +349,9 @@ Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ weimar_coalition +]%
 
 Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ grand_coalition +]%
 
-Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP + Others): [+ bourgeois_coalition +]%
+Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP): [+ bourgeois_coalition +]%
 
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
+Right-wing Coalition (Z + BVP + DVP + DNVP): [+ right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 

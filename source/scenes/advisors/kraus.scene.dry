@@ -1,0 +1,42 @@
+title: Conrad Kraus
+is-pinned-card: true
+tags: advisor, agsoc
+card-image: img/portraits/BaadeFritz.jpg
+view-if: kraus_advisor = 1
+new-page: true 
+### To @agriculture_union, add union stats
+
+= Conrad Kraus
+
+Conrad Kraus is an influential member in the <info-tip-wrap>Agricultural branches<info-tip>the FAUD didn't usually have Agricultural branches, due to only a small number of agricultural workers being unionised under the FAUD, and not concentrated enough to one area. Usually, these agricultural workers would just join the existing industrial workers branch.</info-tip></info-tip-wrap> of the FAUD, Germany's main syndicalist union and an influential <span style=" color: #228B22;">Agrarian</span> <span style=" color: #c90000;">Socialist</span> within our party.
+
+- @agriculture_union
+- @talking_farm_union
+- @faud_ally
+- @root: Return to main
+
+@agriculture_union
+title: Agricultural Organising
+subtitle: Conrad Kraus can help with attracting farmworkers to rural unions.
+choose-if: advisor_action_timer <= 0 and (rural_policy > 0 or rural_campaigned >= 1)
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_campaigned <= 0 : The <span style="color: #c00000;">SPD</span> has not campaigned enough among the rural populace to change any minds. ?]
+on-arrival: advisor_action_timer = 6; rural_campaigned += 1; rural_dnvp -= 2; rural_others += 1
+
+We have organised farmworkers across Germany, which has also bolstered our influence among the trade unions
+
+@talking_farm_union
+title: Building a Farmworkers Union
+subtitle: Create a Farmworkers Union, strengthening socialism within the Rural base.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6
+
+We have made progress towards building a Farmworkers Union
+
+@faud_ally
+title: Co-operation with the FAUD
+subtitle: Try to ally and work with the FAUD
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6
+go-to: faud_cooperation_scene
