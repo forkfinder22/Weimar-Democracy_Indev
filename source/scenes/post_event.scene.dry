@@ -469,104 +469,125 @@ if (Q.month_actions >= 1) {
     // Keep the small parties afloat
     if (!Q.electoral_threshold) {
         if (Q.dbp_votes < 1) {
-            Q.rural_dbp += 0.1
+            Q.rural_dbp += 0.1;
         }
         if (Q.cnblp_votes < 1) {
-            Q.rural_cnblp += 0.25
+            Q.rural_cnblp += 0.25;
         }
         if (Q.rlb_votes < 0.5) {
-            Q.rural_rlb += 0.1
+            Q.rural_rlb += 0.1;
         }
         if (Q.slv_votes < 0.5) {
-            Q.rural_slv += 0.1
+            Q.rural_slv += 0.1;
         }
         if (Q.dhp_votes < 0.5) {
-            Q.rural_dhp += 0.1
-            Q.old_middle_dhp += 0.1
-            Q.workers_dhp += 0.1
+            Q.rural_dhp += 0.1;
+            Q.old_middle_dhp += 0.1;
+            Q.workers_dhp += 0.1;
         }
         if (Q.vrp_votes < 0.5) {
-            Q.new_middle_vrp += 0.1
+            Q.new_middle_vrp += 0.1;
         }
         if (Q.wp_votes < 1) {
-            Q.new_middle_wp += 0.2
-            Q.old_middle_wp += 0.2
+            Q.new_middle_wp += 0.2;
+            Q.old_middle_wp += 0.2;
         }
         // Economic parties benefit form inflation
         if (Q.inflation > 2.5) {
-            Q.new_middle_vrp += 0.05
-            Q.old_middle_wp += 0.05
+            Q.new_middle_vrp += 0.05;
+            Q.old_middle_wp += 0.05;
         }
         if (Q.inflation > 5) {
-            Q.new_middle_vrp += 0.05
-            Q.old_middle_wp += 0.05
+            Q.new_middle_vrp += 0.05;
+            Q.old_middle_wp += 0.05;
         }
         if (Q.inflation > 7.5 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05
-            Q.old_middle_wp += 0.05
+            Q.new_middle_vrp += 0.05;
+            Q.old_middle_wp += 0.05;
         }
         if (Q.inflation > 10 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05
-            Q.old_middle_wp += 0.05
+            Q.new_middle_vrp += 0.05;
+            Q.old_middle_wp += 0.05;
             if (Q.ddp_in_government) {
-                Q.new_middle_ddp -= 0.05
+                Q.new_middle_ddp -= 0.05;
                 // Middle Class see the DDP as incapable from stopping inflation
             }
             if (Q.z_in_government) {
-                Q.new_middle_z -= 0.05
+                Q.new_middle_z -= 0.05;
                 // Middle Class see the Z as incapable from stopping inflation
             }
             if (Q.dvp_in_government) {
-                Q.old_middle_dvp -= 0.05
+                Q.old_middle_dvp -= 0.05;
                 // Middle Class see the DVP as incapable from stopping inflation
             }
             if (Q.dnvp_in_government) {
-                Q.old_middle_dnvp -= 0.05
+                Q.old_middle_dnvp -= 0.05;
                 // Middle Class see the DNVP as incapable from stopping inflation
             }
         }
         if (Q.inflation > 12.5 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05
-            Q.old_middle_wp += 0.05
+            Q.new_middle_vrp += 0.05;
+            Q.old_middle_wp += 0.05;
             if (Q.ddp_in_government) {
-                Q.new_middle_ddp -= 0.06
+                Q.new_middle_ddp -= 0.06;
                 // Middle Class see the DDP as incapable from stopping inflation
             }
             if (Q.z_in_government) {
-                Q.new_middle_z -= 0.06
+                Q.new_middle_z -= 0.06;
                 // Middle Class see the Z as incapable from stopping inflation
             }
             if (Q.dvp_in_government) {
-                Q.old_middle_dvp -= 0.06
+                Q.old_middle_dvp -= 0.06;
                 // Middle Class see the DVP as incapable from stopping inflation
             }
             if (Q.dnvp_in_government) {
-                Q.old_middle_dnvp -= 0.06
+                Q.old_middle_dnvp -= 0.06;
                 // Middle Class see the DNVP as incapable from stopping inflation
             }
         }
         if (Q.inflation > 15 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05
-            Q.old_middle_wp += 0.05
+            Q.new_middle_vrp += 0.05;
+            Q.old_middle_wp += 0.05;
             if (Q.ddp_in_government) {
-                Q.new_middle_ddp -= 0.07
+                Q.new_middle_ddp -= 0.07;
                 // Middle Class see the DDP as incapable from stopping inflation
             }
             if (Q.z_in_government) {
-                Q.new_middle_z -= 0.07
+                Q.new_middle_z -= 0.07;
                 // Middle Class see the Z as incapable from stopping inflation
             }
             if (Q.dvp_in_government) {
-                Q.old_middle_dvp -= 0.07
+                Q.old_middle_dvp -= 0.07;
                 // Middle Class see the DVP as incapable from stopping inflation
             }
             if (Q.dnvp_in_government) {
-                Q.old_middle_dnvp -= 0.07
+                Q.old_middle_dnvp -= 0.07;
                 // Middle Class see the DNVP as incapable from stopping inflation
             }
         }
     }
 }
+
+/// ---------------------------------- ///
+/// AGRARIAN SOCIALIST UPDATE |||||||| ///
+/// AGRARIAN SOCIALIST UPDATE |||||||| ///
+/// ---------------------------------- ///
+if (Q.rural_spd > 10 && Q.agr_cc <= 20) {
+    Q.agr_cc += 1;
+}
+if (Q.agr_cc >= 12 && Q.agr_awakened) {
+    Q.dbp_left += 0.01;
+    Q.cnblp_left += 0.009;
+    Q.rlb_left += 0.008;
+    Q.slv += 0.007;
+    Q.dhp += 0.006;
+    Q.vrp += 0.002;
+    Q.wp += 0.001;
+}
+/// ---------------------------------- ///
+/// AGRARIAN SOCIALIST UPDATE |||||||| ///
+/// AGRARIAN SOCIALIST UPDATE |||||||| ///
+/// ---------------------------------- ///
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
 var scene = this.game.scenes['post_event.events_choice'];
