@@ -348,7 +348,13 @@ Q.ddp_r = 6;
 Q.dvp_r = 10;
 Q.dnvp_r = 20;
 Q.nsdap_r = 3;
-Q.other_r = 9;
+Q.dhp_r = 0.86;
+Q.dbp_r = 0;
+Q.rlb_r = 1.65
+Q.wp_r = 2.29
+Q.vrp_r = 0;
+Q.slv_r = 0;
+Q.cnblp_r = 0;
 
 // diff from prev
 Q.old_spd_r = 26;
@@ -358,7 +364,13 @@ Q.old_ddp_r = 6;
 Q.old_dvp_r = 10;
 Q.old_dnvp_r = 20;
 Q.old_nsdap_r = 3;
-Q.old_other_r = 9;
+Q.old_dhp_r = 0.86;
+Q.old_dbp_r = 0;
+Q.old_rlb_r = 1.65
+Q.old_wp_r = 2.29
+Q.old_vrp_r = 0;
+Q.old_slv_r = 0;
+Q.old_cnblp_r = 0;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
