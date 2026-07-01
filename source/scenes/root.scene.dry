@@ -118,7 +118,7 @@ Q.dbp_relation = 60;
 Q.cnblp_relation = 28;
 Q.rlb_relation = 13;
 Q.slv_relation = 32;
-Q.dhp_relation = 45;
+Q.dhp_relation = 75;
 Q.vrp_relation = 25;
 Q.wp_relation = 12;
 // DNVP and NSDAP are invariably hostile
