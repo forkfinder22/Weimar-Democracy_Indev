@@ -588,6 +588,22 @@ if (Q.agr_cc >= 12 && Q.agr_awakened) {
 /// AGRARIAN SOCIALIST UPDATE |||||||| ///
 /// AGRARIAN SOCIALIST UPDATE |||||||| ///
 /// ---------------------------------- ///
+// Tells if there is an undefined
+var allVars = Object.keys(Q);
+var undefinedVars = [];
+
+for (var key of allVars) {
+    if (Q[key] === undefined || Q[key] !== Q[key]) { // NaN check via self-inequality
+        undefinedVars.push(key);
+    }
+}
+
+if (undefinedVars.length > 0) {
+    console.warn("Undefined or NaN Q variables detected:", undefinedVars);
+} else {
+    console.log("All Q variables OK.");
+}
+
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
 var scene = this.game.scenes['post_event.events_choice'];

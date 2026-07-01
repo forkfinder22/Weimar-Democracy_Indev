@@ -111,8 +111,16 @@ Q.moderate_plan_adopted = 0;
 // inter-party relations
 Q.z_relation = 50;
 Q.kpd_relation = 25;
+Q.sapd_relation = 85;
 Q.ddp_relation = 60;
 Q.dvp_relation = 35;
+Q.dbp_relation = 60;
+Q.cnblp_relation = 28;
+Q.rlb_relation = 13;
+Q.slv_relation = 32;
+Q.dhp_relation = 75;
+Q.vrp_relation = 25;
+Q.wp_relation = 12;
 // DNVP and NSDAP are invariably hostile
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
@@ -236,7 +244,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'dbp', 'cnblp', 'rlb', 'slv', 'dhp', 'vrp', 'wp'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
@@ -375,6 +383,8 @@ Q.old_cnblp_r = 0;
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+Q.nbsp_r = 0;
+Q.old_nsbp_r = 0;
 
 // for changing the DDP's name to the DStP
 Q.ddp_name = "DDP";

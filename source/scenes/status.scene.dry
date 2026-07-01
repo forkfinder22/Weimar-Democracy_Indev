@@ -75,18 +75,35 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
+KPD: [+ kpd_relation : relationships +]
 
-{!<span class="tooltip-text" title="Center Party">Z</span>!}: [+ z_relation : relationships +]
+[? if sapd_formed : SAPD: [+ sapd_relation : relationships +]?]
 
-{!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_relation : relationships +]
+[+ ddp_name +]: [+ ddp_relation : relationships +]
 
-{!<span class="tooltip-text" title="German People's Party">DVP</span>!}: [+ dvp_relation : relationships +]
+Z: [+ z_relation : relationships +]
 
-{!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_relation : relationships +]
+DVP: [+ dvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="German National People's Party">DNVP</span>!}: [+ dnvp_relation : relationships +]
+DNVP: [+ dnvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_relation : relationships +]
+NSDAP: [+ nsdap_relation : relationships +]
+
+= Other Parties
+
+DBP: [+ dbp_relation : relationships +]
+
+CNBLP: [+ cnblp_relation : relationships +]
+
+RLB: [+ rlb_relation : relationships +]
+
+SLV: [+ slv_relation : relationships +]
+
+DHP: [+ dhp_relation : relationships +]
+
+VRP: [+ vrp_relation : relationships +]
+
+WP: [+ wp_relation : relationships +]
 
 = Internal Factions of the SPD
 
@@ -159,21 +176,23 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-SPD: [+ spd_votes +]%
+KPD: [+ kpd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
-Z + BVP: [+ z_votes +]%
-
-KPD: [+ kpd_votes +]%
+SPD: [+ spd_votes +]%
 
 [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+
+Z + BVP: [+ z_votes +]%
 
 DVP: [+ dvp_votes +]%
 
 DNVP: [+ dnvp_votes +]%
 
 NSDAP: [+ nsdap_votes +]%
+
+= Other Parties
 
 DBP: [+ dbp_votes +]% 
 
