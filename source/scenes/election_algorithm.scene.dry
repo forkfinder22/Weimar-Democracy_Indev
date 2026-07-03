@@ -1,6 +1,6 @@
 title: Election
 on-arrival: {!
-// Tells if there is a typo causing an undefined
+// Tells if there is an undefined
 for (var c of Q.classes) {
     for (var party of Q.parties) {
         if (Q[c+'_'+party] === undefined) {
@@ -59,6 +59,13 @@ for (var party of Q.parties) {
     }
     //Q[party+'_votes'] = Q[party+'_votes_dec'];
     // display
+}
+for (var c of Q.classes) {
+    for (var party of Q.parties) {
+        if (Q[c+'_'+party+'_normalized'] === undefined) {
+            throw new Error('Missing value: ' + c + '_' + party + _normalized);
+        }
+    }
 }
 !}
 go-to: jumpScene

@@ -603,6 +603,14 @@ if (undefinedVars.length > 0) {
 } else {
     console.log("All Q variables OK.");
 }
+// Checks specifically for undefined normalizations
+for (var c of Q.classes) {
+    for (var party of Q.parties) {
+        if (Q[c+'_'+party+'_normalized'] === undefined) {
+            throw new Error('Missing value: ' + c + '_' + party + _normalized);
+        }
+    }
+}
 
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
