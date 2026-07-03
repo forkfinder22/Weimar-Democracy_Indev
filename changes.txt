@@ -1,2 +1,6 @@
 Alpha 1:
 Added AgSoc faction, Class Consciousness, Advisors, New Agricultural Policy options, and smaller parties. Also the DHP can tolerate and join the Weimar Coalition
+
+Alpha2:
+
+Fixed the Agricultural Class Consciousness Card, added Sandbox
