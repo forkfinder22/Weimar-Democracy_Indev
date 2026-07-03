@@ -12,7 +12,7 @@ face-image: img/hindenburg_election.jpg
 
 @pres_election
 
-The presidential election is coming up soon. [? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if hitler_deported==0 : The Nazis will run Hitler, while the KPD will run Thälmann. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if hitler_deported==1 : Since Hitler has been deported, the Nazis will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany. Meanwhile, the KPD will run Ernst Thälmann. ?]
+The presidential election is coming up soon. [? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if hitler_deported == 0 : The Nazis will run Hitler, while the KPD will run Thälmann. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of unspeakable horrors. ?][? if hitler_deported == 1 : Since Hitler has been deported, the Nazis will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany. Meanwhile, the KPD will run Ernst Thälmann. ?]
 [? if sapd_formed: The SAPD, our former leftists, are supporting Thälmann of the KPD, and will likely share an endorsement with the Communists. ?]
 
 # if hitler is deported, who would nsdap run? Duesterberg? or Goering?
@@ -180,7 +180,13 @@ Q.thalmann_votes = 0;
 
 // initial phase:
 Q.hitler_votes += Q.nsdap_normalized;
-Q.hindenburg_votes += Q.other_normalized;
+Q.hindenburg_votes += Q.dbp_normalized;
+Q.hindenburg_votes += Q.cnblp_normalized;
+Q.hindenburg_votes += Q.rlb_normalized;
+Q.hindenburg_votes += Q.slv_normalized;
+Q.hindenburg_votes += Q.dhp_normalized;
+Q.hindenburg_votes += Q.vrp_normalized;
+Q.hindenburg_votes += Q.wp_normalized;
 Q.hindenburg_votes += Q.dnvp_normalized;
 
 if (Q.braun_campaign) {
@@ -301,11 +307,11 @@ Q.z_support_braun = 0;
 if ((Q.z_relation >= 55 && Q.braun_votes >= Q.hindenburg_votes) || (Q.z_relation > 35 && Q.z_party_leader == "Joos")) {
     Q.z_support_braun = 1;
     if (Q.hitler_support_hindenburg) {
-        Q.hindenburg_to_braun_bonus += Q.other_normalized/2;
+        Q.hindenburg_to_braun_bonus += (Q.dbp_normalized + Q.dhp_normalized);
     }
 } else if (Q.z_relation >= 50 && Q.hitler_support_hindenburg) {
     Q.z_support_braun = 1;
-    Q.hindenburg_to_braun_bonus += Q.other_normalized/2;
+    Q.hindenburg_to_braun_bonus += (Q.dbp_normalized + Q.dhp_normalized);
 } else if (Q.z_relation <= 35 || (Q.z_relation <= 45 && Q.braun_votes < Q.hindenburg_votes && Q.hindenburg_votes > Q.hitler_votes && Q.difficulty >= 0)) {
     Q.z_support_braun = 0;
 } else {

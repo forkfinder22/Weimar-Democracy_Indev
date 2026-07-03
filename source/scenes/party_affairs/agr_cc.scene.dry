@@ -4,7 +4,7 @@ on-arrival: agr_cc_timer = 4
 max-visits: 40
 is-card: true
 card-image: img/freiheit_und_arbeit.jpg
-view-if: agr_cc_timer = 6 and agr_cc > 5
+view-if: agr_cc_timer = 0 and agr_cc > 5 and agr_awakened = 0
 tags: party_affairs
 
 = Socialism in the Peasant Class
