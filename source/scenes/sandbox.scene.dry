@@ -3155,9 +3155,38 @@ Lowered Catholics support for Other.
 @agr_cc
 
 - @agr_cc_up: Increase Agricultural Class Consciouness by 1
+- @agr_cc_super_up: Increase Agricultural Class Consciouness by 5
 - @agr_cc_down: Decrease Agricultural Class Consciouness by 1
 - @agr_cc_awakened: Awaken the Rural Class
 - @cc: Return to Class consciouness menu
+
+@agr_cc_up
+on-arrival: {!
+Q.agr_cc += 1;
+!}
+
+Increased Agricultural Class Consciouness
+
+@agr_cc_super_up
+on-arrival: {!
+Q.agr_cc += 5;
+!}
+
+Increased Agircultural Class Consciousness by 5
+
+@agr_cc_down
+on-arrival: {!
+Q.agr_cc -= 1;
+!}
+
+Decrease Agricultural Class Consciouness
+
+@agr_cc_awakened
+on-arrival: {!
+Q.agr_awakened = 1;
+!}
+
+The peasants have awakened
 
 @nmc_cc
 choose-if: never
