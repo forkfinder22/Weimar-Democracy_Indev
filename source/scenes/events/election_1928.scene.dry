@@ -83,6 +83,12 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(2);
     }
 }
+// Ensure no floating points
+for (var party of Q.parties) {
+    if (Q[party + '_r'] > 0) {
+        Q[party + '_r'] = Q[party + '_r'].toFixed(2);
+    }
+}
 
 // get change arrows and signs
 
