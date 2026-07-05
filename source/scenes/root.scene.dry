@@ -125,6 +125,19 @@ Q.wp_relation = 12;
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
 
+// leftism attributes
+Q.ddp_left = 0;
+Q.z_left = 0;
+Q.dvp_left = 0;
+Q.dbp_left = 0;
+Q.cnblp_left = 0;
+Q.rlb_left = 0;
+Q.slv_left = 0;
+Q.dhp_left = 0;
+Q.tlb_left = 0;
+Q.vrp_left = 0;
+Q.wp_left = 0;
+
 Q.kpd_leader = "Thälmann";
 // alternative is the Conciliators as party leader
 Q.kpd_party_leader = "Thälmann";
@@ -363,6 +376,7 @@ Q.wp_r = 2.29
 Q.vrp_r = 0;
 Q.slv_r = 0;
 Q.cnblp_r = 0;
+Q.tlb_r = 0;
 
 // diff from prev
 Q.old_spd_r = 26;
