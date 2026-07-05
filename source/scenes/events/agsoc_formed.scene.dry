@@ -15,7 +15,7 @@ With our ever-growing rural base, an emerging current of "Agrarian Socialism" ha
 @accept
 on-arrival: agrarian_socialism = 1; rural_spd += 5; new_middle_spd -= 1; old_middle_spd -= 1; workers_spd -= 3;
 
-The Agrarian-Socialist faction has been formed! It's leaders compose of Fritz Baade, our most experienced Agricultural advisor, Leon Kopp, a skilled rural campaigner, Conrad Kraus, a rural union organiser, and Adler Schwarz, a long-time orator and politican
+The Agrarian-Socialist faction has been formed! It's leaders compose of Fritz Baade, our most experienced Agricultural advisor, Leon Kopp, a skilled rural campaigner, Conrad Kraus, a rural union organiser, and Adler Schwarz, a long-time orator and politican.
 
 @decline
 on-arrival: rural_spd -= 7; workers_spd += 1;
