@@ -95,7 +95,7 @@ subtitle: As the most pro-Nazi institute, shutting it down will help delegitmize
 view-if: kwg_research > 0
 choose-if: pro_eugenics < 50.01
 unavailable-subtitle: The right-wing have too strong of a presence in the Reichstag.
-on-arrival: new_middle_ddp += 2; old_middle_ddp += 1; new_middle_nsdap -= 1; old_middle_nsdap -= 1; new_middle_dnvp -= 1; workers_spd += 1; new_middle_spd += 1; dvp_relation -= 5 if dvp_left < 5; wp_relation -= 5 if wp_left < 5; cnblp_relation -= 5 if wp_left < 5; rlb_relation -= 5 if _rlb_left < 5; tlb_relation -= 5 if tlb_formed and tlb_left < 5; coalition_dissent += 1 if dvp_in_government or wp_in_government or cnblp_in_government or rlb_in_government or tlb_in_government; pro_republic += 4; nationalism -= 2; 
+on-arrival: new_middle_ddp += 2; old_middle_ddp += 1; new_middle_nsdap -= 1; old_middle_nsdap -= 1; new_middle_dnvp -= 1; workers_spd += 1; new_middle_spd += 1; dvp_relation -= 5 if dvp_left < 5; wp_relation -= 5 if wp_left < 5; cnblp_relation -= 5 if wp_left < 5; rlb_relation -= 5 if rlb_left < 5; tlb_relation -= 5 if tlb_formed and tlb_left < 5; coalition_dissent += 1 if dvp_in_government or wp_in_government or cnblp_in_government or rlb_in_government or tlb_in_government; pro_republic += 4; nationalism -= 2; 
 
 We have shut down the Eugenics branch of the Kaiser Wilhelm Institute! This is a big win for dispelling the myth of "Race Sciences", though the Right-Wing parties are unhappy. 
 
