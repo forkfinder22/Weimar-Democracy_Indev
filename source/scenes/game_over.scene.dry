@@ -55,6 +55,10 @@ if (Q.chancellor == "Thälmann" || Q.president == "Thälmann") {
     this.achieve('sohn_seiner_klasse');
 }
 
+if (Q.works_councils = 3 && Q.socializations = 3 && Q.econ_cooperatives = 3) {
+    this.achieve('die_solidaritaet');
+}
+
 // calculate normalized class voting for the achievements
 for (var c of Q.classes) {
     var class_votes = 0;
@@ -426,6 +430,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
+= Mini-achievements
+
+[? if game_achievement_die_solidaritaet: **Die Solidarität** - The Cooperative, Nationalization, and Work Council options on the Economic Democracy card have been fully completed ?]
 
 
 = Completed Achievements Overall
@@ -642,6 +649,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_stolperstein: **Stolperstein** - we lost, but history might memorialize us... ?]
 
+= Incomplete Mini-Achievements
+
+[? if not game_achievement_die_solidaritaet: **Die Solidarität** - The Cooperative, Nationalization, and Work Council options on the Economic Democracy card have been fully completed ?]
 
 @end_game
 game-over: true

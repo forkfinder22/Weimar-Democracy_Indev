@@ -65,7 +65,7 @@ We have begun to socialize key industries by buying out the capitalist owners, a
 @cooperatives_1
 title: Support worker and consumer cooperatives.
 subtitle: -1 budget
-on-arrival: economic_democracy += 1; cooperatives += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); budget -= 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2
+on-arrival: economic_democracy += 1; cooperatives += 1; econ_cooperatives += 1; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); budget -= 1; unemployed -= 1 if unemployed > 9; economic_growth += 0.2
 choose-if: budget >= 1
 max-visits: 3
 
