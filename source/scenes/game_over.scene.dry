@@ -55,7 +55,7 @@ if (Q.chancellor == "Thälmann" || Q.president == "Thälmann") {
     this.achieve('sohn_seiner_klasse');
 }
 
-if (Q.works_councils = 3 && Q.socializations = 3 && Q.econ_cooperatives = 3) {
+if (Q.works_councils == 3 && Q.socializations == 3 && Q.econ_cooperatives == 3) {
     this.achieve('die_solidaritaet');
 }
 
