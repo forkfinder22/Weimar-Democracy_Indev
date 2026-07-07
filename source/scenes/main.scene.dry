@@ -34,3 +34,16 @@ max-cards: 6
 - @govt
 - #advisor
 - @shuffle_leadership_pinned
+
+@party
+title: Party Affairs
+card-image: img/Vorwaerts_nr_1.png
+is-deck: true
+
+- #party_affairs
+
+@govt
+title: Government Affairs
+view-if: time >= 6
+card-image: img/reichstag_2.jpg
+is-deck: true
