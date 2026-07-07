@@ -28,7 +28,7 @@ max-cards: 6
 
 {!<p>!}[? if year = 1928 and month = 1 : The current Reichswehr Minister, Otto Gessler, resigns amid a financial scandal. Wilhelm Groener is to be appointed in his place. ?]
 
-{!<p>!}[? if year = 1928 and month = 1 : 140'000 farmers in Schleswig-Holstein demonstrate against the Reichstag's Agricultural policy. | <newsopt onclick="window.dendryUI.dendryEngine.goToScene('schleswig_demonstrations');">Options</newsopt>?]
+{!<p>!}[? if year = 1928 and month = 1 : 140'000 farmers in Schleswig-Holstein demonstrate against the Reichstag's Agricultural policy. | <newsopt onclick="window.dendryUI.dendryEngine.goToScene('schleswig_demonstrations');">Options&nbsp;&nbsp;</newsopt>?]
 
 {!<p>!}[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
 
