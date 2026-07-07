@@ -211,7 +211,7 @@ Diplomatic Leverage: [+ diplomatic_leverage +]
 - @negotiate
 - @reduce_reparations
 - @incr_lev
-- @fpmenu: Back to Top
+- @fp_menu: Back to Top
 
 @incr_lev
 title: Increase the amount of leverage we have
