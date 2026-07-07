@@ -18,8 +18,6 @@ What should our foreign policy priority be?
 - @improve_east
 - @improve_soviet
 - @customs_union
-- @negotiate
-- @reduce_reparations
 - @expose
 - @european_union
 - @european_union_2
@@ -27,6 +25,7 @@ What should our foreign policy priority be?
 - @concordat
 - @support_austria
 - @support_austria_2
+- @tov_sc
 - @root: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -118,8 +117,10 @@ Immediately, France and other neighboring countries lodge their protests. The lo
 @negotiate
 title: Negotiate regarding our remaining obligations from the Treaty of Versailles.
 subtitle: [? if young_plan_seen == 1 : After passing the Young Plan, France has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further, given the economic depression. ?]
-view-if: reparations > -2 and reparations_negotiation < 3
-on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiations += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3
+view-if: reparations > -2 and reparations_negotiation < 3 
+choose-if: diplomatic_leverage >= 1
+unavailable-subtitle: Not enough diplomatic leverage
+on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiations += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3; diplomatic_leverage -= 1
 
 Negotiations procede smoothly for the most part. The Western powers are convinced of Germany's sincerity and goodwill. [? if nationalism <= 50 or pacifism >= 3 : They are pleased to see that we are renouncing militarism. ?]
 
@@ -128,7 +129,7 @@ Negotiations procede smoothly for the most part. The Western powers are convince
 title: The Western Allies are finally willing to pause our reparations payments!
 subtitle: Our negotiations have been successful.
 view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparations > -2
-on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0
+on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; economic_growth += 0.7; economic_growth += 0.5 if economic_growth < 0; agr_cc += 0.5
 max-visits: 1
 
 Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American president Hoover, who has been friendlier towards us than the Europeans.
@@ -201,3 +202,19 @@ Along with France, Great Britain, and many other states of Western and Eastern E
 A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for German products and new sources of investment.
 
 Fascist Italy remains a problem, and the Soviet Union also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.
+
+@tov_sc
+title: Negotiate sections of the Treaty of Versailles
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+- @negotiate
+- @reduce_reparations
+- @incr_lev
+- @fpmenu: Back to Top
+
+@incr_lev
+title: Increase the amount of leverage we have
+on-arrival: diplomatic_leverage += 1
+
+We have increased the amount of diplomatic leverage we have through various means.
