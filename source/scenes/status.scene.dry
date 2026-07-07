@@ -223,3 +223,103 @@ Unemployed: SPD: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, 
 Catholics: SPD: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, DBP: [+ catholics_dbp_display +]%, CNBLP: [+ catholics_cnblp_display +]%, RLB: [+ catholics_rlb_display +]%, SLV: [+ catholics_slv_display +]%, DHP: [+ catholics_dhp_display +]%, VRP: [+ catholics_vrp_display +]%, WP: [+ catholics_wp_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%
+
+@foreign
+
+= Foreign Relations
+
+<span style="color: #000091;">W</span><span style="color: #C8102E;">e</span><span style="color: #003DA5;">s</span><span style="color: #FFCD00;">t</span><span style="color: #51ADDA;">e</span><span style="color: #046A38;">r</span><span style="color: #F1BF00;">n</span> European Countries:
+
+<span style="color: #000091;">France</span>: [? if fra_relation <= -3 : {!<span style="color: #FF0000;">!}[+ fra_relation : foreign_relations +]{!</span>!} ?][? if fra_relation >= -2 and fra_relation <= 2 : {!<span style="color: #FFE000;">!}[+ fra_relation : foreign_relations +]{!</span>!} ?][? if fra_relation >= 3 : {!<span style="color: #00B300;">!}[+ fra_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #C8102E;">Britain</span>: [? if bri_relation <= -3 : {!<span style="color: #FF0000;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?][? if bri_relation >= -2 and bri_relation <= 2 : {!<span style="color: #FFE000;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?][? if bri_relation >= 3 : {!<span style="color: #00B300;">!}[+ bri_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #003DA5;">Netherlands</span>: [? if net_relation <= -3 : {!<span style="color: #FF0000;">!}[+ net_relation : foreign_relations +]{!</span>!} ?][? if net_relation >= -2 and net_relation <= 2 : {!<span style="color: #FFE000;">!}[+ net_relation : foreign_relations +]{!</span>!} ?][? if net_relation >= 3 : {!<span style="color: #00B300;">!}[+ net_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFCD00;">Belgium</span>: [? if bel_relation <= -3 : {!<span style="color: #FF0000;">!}[+ bel_relation : foreign_relations +]{!</span>!} ?][? if bel_relation >= -2 and bel_relation <= 2 : {!<span style="color: #FFE000;">!}[+ bel_relation : foreign_relations +]{!</span>!} ?][? if bel_relation >= 3 : {!<span style="color: #00B300;">!}[+ bel_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #51ADDA;">Luxembourg</span>: [? if lux_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lux_relation : foreign_relations +]{!</span>!} ?][? if lux_relation >= -2 and lux_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lux_relation : foreign_relations +]{!</span>!} ?][? if lux_relation >= 3 : {!<span style="color: #00B300;">!}[+ lux_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #046A38;">Portugal</span>: [? if por_relation <= -3 : {!<span style="color: #FF0000;">!}[+ por_relation : foreign_relations +]{!</span>!} ?][? if por_relation >= -2 and por_relation <= 2 : {!<span style="color: #FFE000;">!}[+ por_relation : foreign_relations +]{!</span>!} ?][? if por_relation >= 3 : {!<span style="color: #00B300;">!}[+ por_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #F1BF00;">Spain</span>: [? if spa_relation <= -3 : {!<span style="color: #FF0000;">!}[+ spa_relation : foreign_relations +]{!</span>!} ?][? if spa_relation >= -2 and spa_relation <= 2 : {!<span style="color: #FFE000;">!}[+ spa_relation : foreign_relations +]{!</span>!} ?][? if spa_relation >= 3 : {!<span style="color: #00B300;">!}[+ spa_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DC143C;">Eas</span><span style="color: #11457e;">te</span><span style="color: #CC0000;">rn</span> European Countries:
+
+<span style="color: #DC143C;">Poland</span>: [? if pol_relation <= -3 : {!<span style="color: #FF0000;">!}[+ pol_relation : foreign_relations +]{!</span>!} ?][? if pol_relation >= -2 and pol_relation <= 2 : {!<span style="color: #FFE000;">!}[+ pol_relation : foreign_relations +]{!</span>!} ?][? if pol_relation >= 3 : {!<span style="color: #00B300;">!}[+ pol_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #11457e;">Czechoslovakia</span>: [? if cze_relation <= -3 : {!<span style="color: #FF0000;">!}[+ cze_relation : foreign_relations +]{!</span>!} ?][? if cze_relation >= -2 and cze_relation <= 2 : {!<span style="color: #FFE000;">!}[+ cze_relation : foreign_relations +]{!</span>!} ?][? if cze_relation >= 3 : {!<span style="color: #00B300;">!}[+ cze_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #CC0000;">Soviet Union</span>: [? if soviet_relation <= -3 : {!<span style="color: #FF0000;">!}[+ soviet_relation : foreign_relations +]{!</span>!} ?][? if soviet_relation >= -2 and soviet_relation <= 2 : {!<span style="color: #FFE000;">!}[+ soviet_relation : foreign_relations +]{!</span>!} ?][? if soviet_relation >= 3 : {!<span style="color: #00B300;">!}[+ soviet_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFB81C;">Ba</span><span style="color: #A4343A;">lt</span><span style="color: #0072CE;">ic</span> Countries:
+
+<span style="color: #FFB81C;">Lithuania</span>: [? if lit_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lit_relation : foreign_relations +]{!</span>!} ?][? if lit_relation >= -2 and lit_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lit_relation : foreign_relations +]{!</span>!} ?][? if lit_relation >= 3 : {!<span style="color: #00B300;">!}[+ lit_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #A4343A;">Latvia</span>: [? if lat_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lat_relation : foreign_relations +]{!</span>!} ?][? if lat_relation >= -2 and lat_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lat_relation : foreign_relations +]{!</span>!} ?][? if lat_relation >= 3 : {!<span style="color: #00B300;">!}[+ lat_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0072CE;">Estonia</span>: [? if est_relation <= -3 : {!<span style="color: #FF0000;">!}[+ est_relation : foreign_relations +]{!</span>!} ?][? if est_relation >= -2 and est_relation <= 2 : {!<span style="color: #FFE000;">!}[+ est_relation : foreign_relations +]{!</span>!} ?][? if est_relation >= 3 : {!<span style="color: #00B300;">!}[+ est_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #00205B;">Sca</span><span style="color: #FECC02;">ndi</span><span style="color: #002F6C;">nav</span><span style="color: #C8102E;">ian</span> Countries:
+
+<span style="color: #00205B;">Norway</span>: [? if nor_relation <= -3 : {!<span style="color: #FF0000;">!}[+ nor_relation : foreign_relations +]{!</span>!} ?][? if nor_relation >= -2 and nor_relation <= 2 : {!<span style="color: #FFE000;">!}[+ nor_relation : foreign_relations +]{!</span>!} ?][? if nor_relation >= 3 : {!<span style="color: #00B300;">!}[+ nor_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FECC02;">Sweden</span>: [? if swe_relation <= -3 : {!<span style="color: #FF0000;">!}[+ swe_relation : foreign_relations +]{!</span>!} ?][? if swe_relation >= -2 and swe_relation <= 2 : {!<span style="color: #FFE000;">!}[+ swe_relation : foreign_relations +]{!</span>!} ?][? if swe_relation >= 3 : {!<span style="color: #00B300;">!}[+ swe_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #002F6C;">Finland</span>: [? if fin_relation <= -3 : {!<span style="color: #FF0000;">!}[+ fin_relation : foreign_relations +]{!</span>!} ?][? if fin_relation >= -2 and fin_relation <= 2 : {!<span style="color: #FFE000;">!}[+ fin_relation : foreign_relations +]{!</span>!} ?][? if fin_relation >= 3 : {!<span style="color: #00B300;">!}[+ fin_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #C8102E;">Denmark</span>: [? if den_relation <= -3 : {!<span style="color: #FF0000;">!}[+ den_relation : foreign_relations +]{!</span>!} ?][? if den_relation >= -2 and den_relation <= 2 : {!<span style="color: #FFE000;">!}[+ den_relation : foreign_relations +]{!</span>!} ?][? if den_relation >= 3 : {!<span style="color: #00B300;">!}[+ den_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFDD00;">Po</span><span style="color: #00AF66;">st</span><span style="color: #DA291C;">-S</span><span style="color: #2B7338;">ov</span><span style="color: #0092BC;">ie</span><span style="color: #FF9E1B;">t</span> Countries:
+
+<span style="color: #FFDD00;">Ukraine</span>: [? if ukr_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ukr_relation : foreign_relations +]{!</span>!} ?][? if ukr_relation >= -2 and ukr_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ukr_relation : foreign_relations +]{!</span>!} ?][? if ukr_relation >= 3 : {!<span style="color: #00B300;">!}[+ ukr_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #00AF66;">Belarus</span>: [? if blr_relation <= -3 : {!<span style="color: #FF0000;">!}[+ blr_relation : foreign_relations +]{!</span>!} ?][? if blr_relation >= -2 and blr_relation <= 2 : {!<span style="color: #FFE000;">!}[+ blr_relation : foreign_relations +]{!</span>!} ?][? if blr_relation >= 3 : {!<span style="color: #00B300;">!}[+ blr_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DA291C;">Georgia</span>: [? if geo_relation <= -3 : {!<span style="color: #FF0000;">!}[+ geo_relation : foreign_relations +]{!</span>!} ?][? if geo_relation >= -2 and geo_relation <= 2 : {!<span style="color: #FFE000;">!}[+ geo_relation : foreign_relations +]{!</span>!} ?][? if geo_relation >= 3 : {!<span style="color: #00B300;">!}[+ geo_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #2B7338;">Chechnya</span>: [? if che_relation <= -3 : {!<span style="color: #FF0000;">!}[+ che_relation : foreign_relations +]{!</span>!} ?][? if che_relation >= -2 and che_relation <= 2 : {!<span style="color: #FFE000;">!}[+ che_relation : foreign_relations +]{!</span>!} ?][? if che_relation >= 3 : {!<span style="color: #00B300;">!}[+ che_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0092BC;">Azerbaijan</span>: [? if azr_relation <= -3 : {!<span style="color: #FF0000;">!}[+ azr_relation : foreign_relations +]{!</span>!} ?][? if azr_relation >= -2 and azr_relation <= 2 : {!<span style="color: #FFE000;">!}[+ azr_relation : foreign_relations +]{!</span>!} ?][? if azr_relation >= 3 : {!<span style="color: #00B300;">!}[+ azr_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FF9E1B;">Armenia</span>: [? if arm_relation <= -3 : {!<span style="color: #FF0000;">!}[+ arm_relation : foreign_relations +]{!</span>!} ?][? if arm_relation >= -2 and arm_relation <= 2 : {!<span style="color: #FFE000;">!}[+ arm_relation : foreign_relations +]{!</span>!} ?][? if arm_relation >= 3 : {!<span style="color: #00B300;">!}[+ arm_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #003893;">B</span><span style="color: #00966E;">a</span><span style="color: #477050;">l</span><span style="color: #DA291C;">k</span><span style="color: #FCD116;">a</span><span style="color: #0D5EAF;">n</span> Countries:
+
+<span style="color: #003893;">Yugoslavia</span>: [? if yug_relation <= -3 : {!<span style="color: #FF0000;">!}[+ yug_relation : foreign_relations +]{!</span>!} ?][? if yug_relation >= -2 and yug_relation <= 2 : {!<span style="color: #FFE000;">!}[+ yug_relation : foreign_relations +]{!</span>!} ?][? if yug_relation >= 3 : {!<span style="color: #00B300;">!}[+ yug_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #00966E;">Bulgaria</span>: [? if bul_relation <= -3 : {!<span style="color: #FF0000;">!}[+ bul_relation : foreign_relations +]{!</span>!} ?][? if bul_relation >= -2 and bul_relation <= 2 : {!<span style="color: #FFE000;">!}[+ bul_relation : foreign_relations +]{!</span>!} ?][? if bul_relation >= 3 : {!<span style="color: #00B300;">!}[+ bul_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #477050;">Hungary</span>: [? if hun_relation <= -3 : {!<span style="color: #FF0000;">!}[+ hun_relation : foreign_relations +]{!</span>!} ?][? if hun_relation >= -2 and hun_relation <= 2 : {!<span style="color: #FFE000;">!}[+ hun_relation : foreign_relations +]{!</span>!} ?][? if hun_relation >= 3 : {!<span style="color: #00B300;">!}[+ hun_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DA291C;">Albania</span>: [? if alb_relation <= -3 : {!<span style="color: #FF0000;">!}[+ alb_relation : foreign_relations +]{!</span>!} ?][? if alb_relation >= -2 and alb_relation <= 2 : {!<span style="color: #FFE000;">!}[+ alb_relation : foreign_relations +]{!</span>!} ?][? if alb_relation >= 3 : {!<span style="color: #00B300;">!}[+ alb_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FCD116;">Romania</span>: [? if rom_relation <= -3 : {!<span style="color: #FF0000;">!}[+ rom_relation : foreign_relations +]{!</span>!} ?][? if rom_relation >= -2 and rom_relation <= 2 : {!<span style="color: #FFE000;">!}[+ rom_relation : foreign_relations +]{!</span>!} ?][? if rom_relation >= 3 : {!<span style="color: #00B300;">!}[+ rom_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0D5EAF;">Greece</span>: [? if gre_relation <= -3 : {!<span style="color: #FF0000;">!}[+ gre_relation : foreign_relations +]{!</span>!} ?][? if gre_relation >= -2 and gre_relation <= 2 : {!<span style="color: #FFE000;">!}[+ gre_relation : foreign_relations +]{!</span>!} ?][? if gre_relation >= 3 : {!<span style="color: #00B300;">!}[+ gre_relation : foreign_relations +]{!</span>!} ?]
+
+Other Countries:
+
+<span style="color: #DC1E35;">Iceland</span>: [? if ice_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ice_relation : foreign_relations +]{!</span>!} ?][? if ice_relation >= -2 and ice_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ice_relation : foreign_relations +]{!</span>!} ?][? if ice_relation >= 3 : {!<span style="color: #00B300;">!}[+ ice_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FF8200;">Ireland</span>: [? if ire_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ire_relation : foreign_relations +]{!</span>!} ?][? if ire_relation >= -2 and ire_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ire_relation : foreign_relations +]{!</span>!} ?][? if ire_relation >= 3 : {!<span style="color: #00B300;">!}[+ ire_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #003DA5;">Liechtenstein</span>: [? if lic_relation <= -3 : {!<span style="color: #FF0000;">!}[+ lic_relation : foreign_relations +]{!</span>!} ?][? if lic_relation >= -2 and lic_relation <= 2 : {!<span style="color: #FFE000;">!}[+ lic_relation : foreign_relations +]{!</span>!} ?][? if lic_relation >= 3 : {!<span style="color: #00B300;">!}[+ lic_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #62B5E5;">San Marino</span>: [? if san_mar_relation <= -3 : {!<span style="color: #FF0000;">!}[+ san_mar_relation : foreign_relations +]{!</span>!} ?][? if san_mar_relation >= -2 and san_mar_relation <= 2 : {!<span style="color: #FFE000;">!}[+ san_mar_relation : foreign_relations +]{!</span>!} ?][? if san_mar_relation >= 3 : {!<span style="color: #00B300;">!}[+ san_mar_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FFF200;">Vatican</span>: [? if vat_relation <= -3 : {!<span style="color: #FF0000;">!}[+ vat_relation : foreign_relations +]{!</span>!} ?][? if vat_relation >= -2 and vat_relation <= 2 : {!<span style="color: #FFE000;">!}[+ vat_relation : foreign_relations +]{!</span>!} ?][? if vat_relation >= 3 : {!<span style="color: #00B300;">!}[+ vat_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #FEDD00;">Andorra</span>: [? if and_relation <= -3 : {!<span style="color: #FF0000;">!}[+ and_relation : foreign_relations +]{!</span>!} ?][? if and_relation >= -2 and and_relation <= 2 : {!<span style="color: #FFE000;">!}[+ and_relation : foreign_relations +]{!</span>!} ?][? if and_relation >= 3 : {!<span style="color: #00B300;">!}[+ and_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #CE1126;">Monaco</span>: [? if mon_relation <= -3 : {!<span style="color: #FF0000;">!}[+ mon_relation : foreign_relations +]{!</span>!} ?][? if mon_relation >= -2 and mon_relation <= 2 : {!<span style="color: #FFE000;">!}[+ mon_relation : foreign_relations +]{!</span>!} ?][? if mon_relation >= 3 : {!<span style="color: #00B300;">!}[+ mon_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #008C45;">Italy</span>: [? if ita_relation <= -3 : {!<span style="color: #FF0000;">!}[+ ita_relation : foreign_relations +]{!</span>!} ?][? if ita_relation >= -2 and ita_relation <= 2 : {!<span style="color: #FFE000;">!}[+ ita_relation : foreign_relations +]{!</span>!} ?][? if ita_relation >= 3 : {!<span style="color: #00B300;">!}[+ ita_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #DA291C;">Switzerland</span>: [? if swi_relation <= -3 : {!<span style="color: #FF0000;">!}[+ swi_relation : foreign_relations +]{!</span>!} ?][? if swi_relation >= -2 and swi_relation <= 2 : {!<span style="color: #FFE000;">!}[+ swi_relation : foreign_relations +]{!</span>!} ?][? if swi_relation >= 3 : {!<span style="color: #00B300;">!}[+ swi_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #EF3340;">Austria</span>: [? if aus_relation <= -3 : {!<span style="color: #FF0000;">!}[+ aus_relation : foreign_relations +]{!</span>!} ?][? if aus_relation >= -2 and aus_relation <= 2 : {!<span style="color: #FFE000;">!}[+ aus_relation : foreign_relations +]{!</span>!} ?][? if aus_relation >= 3 : {!<span style="color: #00B300;">!}[+ aus_relation : foreign_relations +]{!</span>!} ?]
+
+<span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span>: [+ diplomatic_leverage +]
+
+Members of the European Union: [? if eu = 0 : The EU has not been formed ?][? if eu : [+ eu_members_array +] ?]

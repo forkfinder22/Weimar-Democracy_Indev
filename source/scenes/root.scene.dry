@@ -495,12 +495,6 @@ Q.land_reform = 0;
 // works-creation programs (i.e. WTB-plan) - how much have they implemented?
 Q.works_program = 0;
 Q.wtb_implemented = 0;
-// Relations with the Western countries (France, UK).
-Q.west_relation = 0;
-// Relations with the Eastern countries (Poland, Czechoslovakia)
-Q.east_relation = 0;
-// Relations with the Soviet Union
-Q.soviet_relation = 0;
 // How much have we exposed the secret rearmament programs?
 Q.rearmament_exposed = 0;
 // reparations vs baseline: young plan is -1.
@@ -625,7 +619,49 @@ Q.rural_reach = 1;
 
 // Foreign Policy vars
 Q.diplomatic_leverage = 1;
-
+Q.eu_members_array = ['Germany', 'France', 'Britain', 'Poland', 'Czechoslovakia'];
+Q.fra_relation = 0;
+Q.bri_relation = 0;
+Q.net_relation = 0;
+Q.bel_relation = 0;
+Q.lux_relation = 0;
+Q.por_relation = 0;
+Q.spa_relation = 0;
+Q.pol_relation = 0;
+Q.cze_relation = 0;
+Q.soviet_relation = 0;
+Q.lit_relation = 0;
+Q.lat_relation = 0;
+Q.est_relation = 0;
+Q.nor_relation = 0;
+Q.swe_relation = 0;
+Q.fin_relation = 0;
+Q.den_relation = 0;
+Q.ukr_relation = 0;
+Q.blr_relation = 0;
+Q.geo_relation = 0;
+Q.che_relation = 0;
+Q.azr_relation = 0;
+Q.arm_relation = 0;
+Q.yug_relation = 0;
+Q.bul_relation = 0;
+Q.hun_relation = 0;
+Q.alb_relation = 0;
+Q.rom_relation = 0;
+Q.gre_relation = 0;
+Q.ice_relation = 0;
+Q.ire_relation = 0;
+Q.lic_relation = 0;
+Q.san_mar_relation = 0;
+Q.vat_relation = 0;
+Q.and_relation = 0;
+Q.mon_relation = 0;
+Q.ita_relation = 0;
+Q.swi_relation = 0;
+Q.aus_relation = 0;
+// Gen relations
+Q.west_relation = 0;
+Q.east_relation = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
