@@ -618,8 +618,11 @@ info-tip-wrap:hover info-tip {
 }
 
 newsopt {
-  text-decoration: underline;
   background-color: #a7a7a7;
+  border-radius: 5px;
+  text-decoration: underline;
+  padding: 2px 6px;
+  display: inline-block;
   color: #000;
 }
 
