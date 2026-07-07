@@ -24,7 +24,11 @@ max-cards: 6
 
 {!<div class="scrollable-box">!}
 
-{!<p>!}[? if year = 1928 and month = 1 : It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality.<br>Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority. ?]{!</p>!}
+{!<p>!}[? if year = 1928 and month = 1 : It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality.<br><br>Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority. ?]{!</p>!}
+
+{!<p>!}[? if year = 1928 and month = 1 : The current Reichswehr Minister, Otto Gessler, resigns amid a financial scandal. Wilhelm Groener is to be appointed in his place. ?]
+
+{!<p>!}[? if year = 1928 and month = 1 : 140'000 farmers in Schleswig-Holstein demonstrate against the Reichstag's Agricultural policy. | <newsopt onclick="window.dendryUI.dendryEngine.goToScene('schleswig_demonstrations');">Options</newsopt>?]
 
 {!<p>!}[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
 

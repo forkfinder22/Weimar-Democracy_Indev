@@ -494,74 +494,74 @@ if (Q.month_actions >= 1) {
         }
         // Economic parties benefit form inflation
         if (Q.inflation > 2.5) {
-            Q.new_middle_vrp += 0.05;
-            Q.old_middle_wp += 0.05;
+            Q.new_middle_vrp += 0.1;
+            Q.old_middle_wp += 0.1;
         }
         if (Q.inflation > 5) {
-            Q.new_middle_vrp += 0.05;
-            Q.old_middle_wp += 0.05;
+            Q.new_middle_vrp += 0.15;
+            Q.old_middle_wp += 0.15;
         }
         if (Q.inflation > 7.5 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05;
-            Q.old_middle_wp += 0.05;
+            Q.new_middle_vrp += 0.20;
+            Q.old_middle_wp += 0.20;
         }
         if (Q.inflation > 10 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05;
-            Q.old_middle_wp += 0.05;
+            Q.new_middle_vrp += 0.35;
+            Q.old_middle_wp += 0.35;
             if (Q.ddp_in_government) {
-                Q.new_middle_ddp -= 0.05;
+                Q.new_middle_ddp -= 0.23;
                 // Middle Class see the DDP as incapable from stopping inflation
             }
             if (Q.z_in_government) {
-                Q.new_middle_z -= 0.05;
+                Q.new_middle_z -= 0.23;
                 // Middle Class see the Z as incapable from stopping inflation
             }
             if (Q.dvp_in_government) {
-                Q.old_middle_dvp -= 0.05;
+                Q.old_middle_dvp -= 0.23;
                 // Middle Class see the DVP as incapable from stopping inflation
             }
             if (Q.dnvp_in_government) {
-                Q.old_middle_dnvp -= 0.05;
+                Q.old_middle_dnvp -= 0.23;
                 // Middle Class see the DNVP as incapable from stopping inflation
             }
         }
         if (Q.inflation > 12.5 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05;
-            Q.old_middle_wp += 0.05;
+            Q.new_middle_vrp += 0.4;
+            Q.old_middle_wp += 0.4;
             if (Q.ddp_in_government) {
-                Q.new_middle_ddp -= 0.06;
+                Q.new_middle_ddp -= 0.25;
                 // Middle Class see the DDP as incapable from stopping inflation
             }
             if (Q.z_in_government) {
-                Q.new_middle_z -= 0.06;
+                Q.new_middle_z -= 0.25;
                 // Middle Class see the Z as incapable from stopping inflation
             }
             if (Q.dvp_in_government) {
-                Q.old_middle_dvp -= 0.06;
+                Q.old_middle_dvp -= 0.25;
                 // Middle Class see the DVP as incapable from stopping inflation
             }
             if (Q.dnvp_in_government) {
-                Q.old_middle_dnvp -= 0.06;
+                Q.old_middle_dnvp -= 0.25;
                 // Middle Class see the DNVP as incapable from stopping inflation
             }
         }
         if (Q.inflation > 15 && (Q.return_to_normalcy || Q.nsdap_votes < 10)) {
-            Q.new_middle_vrp += 0.05;
-            Q.old_middle_wp += 0.05;
+            Q.new_middle_vrp += 0.5;
+            Q.old_middle_wp += 0.5;
             if (Q.ddp_in_government) {
-                Q.new_middle_ddp -= 0.07;
+                Q.new_middle_ddp -= 0.3;
                 // Middle Class see the DDP as incapable from stopping inflation
             }
             if (Q.z_in_government) {
-                Q.new_middle_z -= 0.07;
+                Q.new_middle_z -= 0.3;
                 // Middle Class see the Z as incapable from stopping inflation
             }
             if (Q.dvp_in_government) {
-                Q.old_middle_dvp -= 0.07;
+                Q.old_middle_dvp -= 0.3;
                 // Middle Class see the DVP as incapable from stopping inflation
             }
             if (Q.dnvp_in_government) {
-                Q.old_middle_dnvp -= 0.07;
+                Q.old_middle_dnvp -= 0.3;
                 // Middle Class see the DNVP as incapable from stopping inflation
             }
         }

@@ -617,6 +617,11 @@ info-tip-wrap:hover info-tip {
     display: block;
 }
 
+newsopt {
+  text-decoration: underline dotted;
+  background-color: #8f8f8f;
+}
+
 .scrollable-box {
   width: 540px;
   /* Default width */
