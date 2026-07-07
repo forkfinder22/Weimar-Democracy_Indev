@@ -616,3 +616,12 @@ info-tip-wrap info-tip {
 info-tip-wrap:hover info-tip {
     display: block;
 }
+
+.scrollable-box {
+  width: 540px;
+  /* Default width */
+  height: 200px;
+  /* Fixed height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+}
