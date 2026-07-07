@@ -1,0 +1,10 @@
+
+(..-3) Hostile
+(-3..-2) Frigid
+(-2..-1) Cold
+(-1..0) Neutral
+(0..1) Lukewarm
+(1..2) Warm
+(2..4) Friendly
+(4..7) Very Friendly
+(7..) Allied
