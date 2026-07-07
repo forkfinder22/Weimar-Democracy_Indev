@@ -20,9 +20,11 @@ if (boxes.length >= 2) {
     boxes[1].remove();
 }
 !}
-max-cards: 3
+max-cards: 6
 
 {!<div class="scrollable-box">!}
+
+{!<p>!}[? if year = 1928 and month = 1 : It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality.<br>Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority. ?]{!</p>!}
 
 {!<p>!}[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
 
@@ -32,42 +34,3 @@ max-cards: 3
 - @govt
 - #advisor
 - @shuffle_leadership_pinned
-
-@main_easy
-set-bg: img/map_2.jpg
-is-hand: true
-on-arrival: {!
-if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
-} else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
-} else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
-}
-!}
-max-cards: 4
-
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
-
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
-
-- @party
-- @govt
-- #advisor
-- @shuffle_leadership_pinned
-
-
-@party
-title: Party Affairs
-card-image: img/Vorwaerts_nr_1.png
-is-deck: true
-
-- #party_affairs
-
-@govt
-title: Government Affairs
-view-if: time >= 6
-card-image: img/reichstag_2.jpg
-is-deck: true
-
-- #govt_affairs
