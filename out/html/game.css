@@ -624,6 +624,7 @@ newsopt {
   padding: 2px 6px;
   display: inline-block;
   color: #000;
+  text-align: center;
 }
 
 .scrollable-box {
