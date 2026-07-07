@@ -618,8 +618,9 @@ info-tip-wrap:hover info-tip {
 }
 
 newsopt {
-  text-decoration: underline dotted;
-  background-color: #8f8f8f;
+  text-decoration: underline;
+  background-color: #a7a7a7;
+  color: #000;
 }
 
 .scrollable-box {
