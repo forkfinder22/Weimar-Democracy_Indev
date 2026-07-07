@@ -322,4 +322,4 @@ Other Countries:
 
 <span style="color: #0F52BA;">Diplomatic</span> <span style="color: #38664C;">Leverage</span>: [+ diplomatic_leverage +]
 
-Members of the European Union: [? if eu = 0 : The EU has not been formed ?][? if eu : [+ eu_members_array +] ?]
+Members of the European Union: [? if eu = 0 : The EU has not been formed ?][? if eu : Britain, Czechoslovakia, France, Germany, Poland ?]
