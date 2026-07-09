@@ -595,23 +595,24 @@ Germany and Britain have never had as hot a rivalry with each other as Germany w
 @improve_east
 title: Improve relations with our eastern neighbors.
 
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
-
 - @improve_pol
 - @improve_cze
+- @improve_hun
 - @genimpr
 
 @improve_pol
 title: Improve our relations with Poland
-on-arrival: pol_relation += 2; reparations_negotiation += 0.5
+on-arrival: pol_relation += 2;
 
-WIP
+We also aim to improve relations with our eastern neighbors, like Poland, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
 
 @improve_cze
 title: Improve our relations with Czechoslovakia
-on-arrival: cze_relation += 2; reparations_negotiation += 0.5
+on-arrival: cze_relation += 1;
 
-WIP
+We have a more difficult time improving relations with Czechoslovakia, due to the unrest in the Sudetenland region, but nevertheless, we must try
+
+## Their relation increase more after the sudetenland crisis is resolved, and Czechoslovakia likes the way it was resolved
 
 @improve_soviet
 title: Improve our relations with the Soviet Union.
