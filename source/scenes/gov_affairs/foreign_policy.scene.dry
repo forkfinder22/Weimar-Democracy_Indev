@@ -210,6 +210,11 @@ Diplomatic Leverage: [+ diplomatic_leverage +]
 
 - @negotiate
 - @reduce_reparations
+- @military: Negotiating the articles limiting our military
+- @borders: Negotiate the articles that have reduced our territory
+- @saar: Negotiate the articles dealing with the Saarland
+- @finance: Negotiate the articles regarding finance
+- @other: Negotiate parts XV (Miscellaneous)
 - @incr_lev
 - @fp_menu: Back to Top
 
@@ -218,3 +223,115 @@ title: Increase the amount of leverage we have
 on-arrival: diplomatic_leverage += 1
 
 We have increased the amount of diplomatic leverage we have through various means.
+
+@military
+choose-if: young_plan_seen = 1
+unavailable-subtitle: The Rhineland needs to have been evacuated by french troops first
+
+wip
+
+@borders
+choose-if: young_plan_seen = 1
+unavailable-subtitle: The Rhineland needs to have been evacuated by french troops first
+
+Alsace, Northern Schleswig, Danzig, Colonies, Memel, Pozan, Gdynia, Katowice, Eupen, Malmedy, Hultschin District
+
+- @alsace: Negotiate for the Alsace-Lorraine
+- @norsch: Negotiate for North Schleswig
+- @danzig: Negotiate for Danzig
+- @colonies: Negotiate for the Colonies
+- @memel: Negotiate for Memel
+- @poznan: Negotiate for Poznań
+- @gdynia: Negotiate for the Polish Corridor
+- @katowice: Negotiate for Katowice
+- @eupmal: Negotiate for Eupen-Malmedy
+- @hultschin: Negotiate for Hultschin
+- @backtov
+
+@alsace
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+## - @alslor1
+## - @alslor2
+## - @alslor3
+## - @alslor4
+## - @alslor5
+
+@norsch
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@danzig
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@colonies
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@memel
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@poznan
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@gdynia
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@katowice
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@eupmal
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@hultschin
+
+Diplomatic Leverage: [+ diplomatic_leverage +]
+
+wip
+
+@saar
+choose-if: young_plan_seen = 1
+unavailable-subtitle: The Rhineland needs to have been evacuated by french troops first
+
+wip negotiate a earlier referendum
+
+@finance
+choose-if: young_plan_seen = 1
+unavailable-subtitle: The Rhineland needs to have been evacuated by french troops first
+
+wip
+
+@other
+choose-if: young_plan_seen = 1
+unavailable-subtitle: The Rhineland needs to have been evacuated by french troops first
+
+wip
+
+@backtov
+title: Negotiate other sections of Versailles
+go-to: tov_sc
