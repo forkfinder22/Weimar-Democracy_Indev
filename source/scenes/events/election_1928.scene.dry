@@ -103,130 +103,130 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
     Q.largest_party = 'KPD';
 }
 
-// coalitions
+javascript// coalitions
 ////////////////////////////
 ///===WEIMAR COALITION===///
 ////////////////////////////
-Q.weimar_coalition = -3; // Accounts for BVP not being in it
-Q.weimar_coalition += Q.spd_r;
-Q.weimar_coalition += Q.ddp_r;
-Q.weimar_coalition += Q.z_r;
-Q.weimar_coalition_dhp = Q.weimar_coalition;
-Q.weimar_coalition_dhp += Q.dhp_r;
+Q.weimar_coalition = parseFloat(-3); // Accounts for BVP not being in it
+Q.weimar_coalition += parseFloat(Q.spd_r);
+Q.weimar_coalition += parseFloat(Q.ddp_r);
+Q.weimar_coalition += parseFloat(Q.z_r);
+Q.weimar_coalition_dhp = parseFloat(Q.weimar_coalition);
+Q.weimar_coalition_dhp += parseFloat(Q.dhp_r);
 if (Q.kpd_relation >= 30) {
-    Q.weimar_coalition += Q.sapd_r;
-    Q.weimar_coalition_dhp += Q.sapd_r
+    Q.weimar_coalition += parseFloat(Q.sapd_r);
+    Q.weimar_coalition_dhp += parseFloat(Q.sapd_r);
 }
 ///////////////////////////
 ///===GRAND COALITION===///
 ///////////////////////////
-Q.grand_coalition = 0;
-Q.grand_coalition += Q.spd_r;
-Q.grand_coalition += Q.ddp_r;
-Q.grand_coalition += Q.z_r;
-Q.grand_coalition += Q.dvp_r;
+Q.grand_coalition = parseFloat(0);
+Q.grand_coalition += parseFloat(Q.spd_r);
+Q.grand_coalition += parseFloat(Q.ddp_r);
+Q.grand_coalition += parseFloat(Q.z_r);
+Q.grand_coalition += parseFloat(Q.dvp_r);
 ///////////////////////////////
 ///===BOURGEOIS COALITION===///
 ///////////////////////////////
-Q.bourgeois_coalition = 0;
-Q.bourgeois_coalition += Q.ddp_r;
-Q.bourgeois_coalition += Q.z_r;
-Q.bourgeois_coalition += Q.dvp_r;
-Q.bourgeois_coalition += Q.dhp_r;
-Q.bourgeois_coalition += Q.dbp_r;
-Q.bourgeois_coalition += Q.cnblp_r;
-Q.bourgeois_coalition += Q.wp_r;
-Q.bourgeois_coalition += Q.vrp_r;
-Q.bourgeois_coalition += Q.rlb_r;
-Q.bourgeois_coalition += Q.slv_r;
+Q.bourgeois_coalition = parseFloat(0);
+Q.bourgeois_coalition += parseFloat(Q.ddp_r);
+Q.bourgeois_coalition += parseFloat(Q.z_r);
+Q.bourgeois_coalition += parseFloat(Q.dvp_r);
+Q.bourgeois_coalition += parseFloat(Q.dhp_r);
+Q.bourgeois_coalition += parseFloat(Q.dbp_r);
+Q.bourgeois_coalition += parseFloat(Q.cnblp_r);
+Q.bourgeois_coalition += parseFloat(Q.wp_r);
+Q.bourgeois_coalition += parseFloat(Q.vrp_r);
+Q.bourgeois_coalition += parseFloat(Q.rlb_r);
+Q.bourgeois_coalition += parseFloat(Q.slv_r);
 ////////////////////////////////
 ///===CENTER-RIGHT COALITION===///
 ////////////////////////////////
-Q.center_right_coalition = 0;
-Q.center_right_coalition += Q.z_r;
-Q.center_right_coalition += Q.ddp_r;
-Q.center_right_coalition += Q.dvp_r;
-Q.center_right_coalition += Q.dnvp_r;
-Q.center_right_coalition += Q.dhp_r;
-Q.center_right_coalition += Q.dbp_r;
-Q.center_right_coalition += Q.cnblp_r;
-Q.center_right_coalition += Q.wp_r;
-Q.center_right_coalition += Q.vrp_r;
-Q.center_right_coalition += Q.rlb_r;
-Q.center_right_coalition += Q.slv_r;
+Q.center_right_coalition = parseFloat(0);
+Q.center_right_coalition += parseFloat(Q.z_r);
+Q.center_right_coalition += parseFloat(Q.ddp_r);
+Q.center_right_coalition += parseFloat(Q.dvp_r);
+Q.center_right_coalition += parseFloat(Q.dnvp_r);
+Q.center_right_coalition += parseFloat(Q.dhp_r);
+Q.center_right_coalition += parseFloat(Q.dbp_r);
+Q.center_right_coalition += parseFloat(Q.cnblp_r);
+Q.center_right_coalition += parseFloat(Q.wp_r);
+Q.center_right_coalition += parseFloat(Q.vrp_r);
+Q.center_right_coalition += parseFloat(Q.rlb_r);
+Q.center_right_coalition += parseFloat(Q.slv_r);
 ////////////////////////////
 ///===RIGHT COALITION===///
 ////////////////////////////
-Q.right_coalition = 0;
-Q.right_coalition += Q.z_r;
-Q.right_coalition += Q.dvp_r;
-Q.right_coalition += Q.dnvp_r;
-Q.right_coalition += Q.dhp_r;
-Q.right_coalition += Q.dbp_r;
-Q.right_coalition += Q.cnblp_r;
-Q.right_coalition += Q.wp_r;
-Q.right_coalition += Q.vrp_r;
-Q.right_coalition += Q.rlb_r;
-Q.right_coalition += Q.slv_r;
+Q.right_coalition = parseFloat(0);
+Q.right_coalition += parseFloat(Q.z_r);
+Q.right_coalition += parseFloat(Q.dvp_r);
+Q.right_coalition += parseFloat(Q.dnvp_r);
+Q.right_coalition += parseFloat(Q.dhp_r);
+Q.right_coalition += parseFloat(Q.dbp_r);
+Q.right_coalition += parseFloat(Q.cnblp_r);
+Q.right_coalition += parseFloat(Q.wp_r);
+Q.right_coalition += parseFloat(Q.vrp_r);
+Q.right_coalition += parseFloat(Q.rlb_r);
+Q.right_coalition += parseFloat(Q.slv_r);
 ////////////////////////////////
 ///===FAR-RIGHT COALITION===///
 ////////////////////////////////
-Q.far_right_coalition = 0;
-Q.far_right_coalition += Q.dnvp_r;
-Q.far_right_coalition += Q.nsdap_r;
+Q.far_right_coalition = parseFloat(0);
+Q.far_right_coalition += parseFloat(Q.dnvp_r);
+Q.far_right_coalition += parseFloat(Q.nsdap_r);
 ////////////////////////////
 ///===LEFT COALITION===///
 ////////////////////////////
-Q.left_coalition = 0;
-Q.left_coalition += Q.spd_r;
-Q.left_coalition += Q.kpd_r;
-Q.left_coalition += Q.sapd_r;
+Q.left_coalition = parseFloat(0);
+Q.left_coalition += parseFloat(Q.spd_r);
+Q.left_coalition += parseFloat(Q.kpd_r);
+Q.left_coalition += parseFloat(Q.sapd_r);
 /////////////////////////////////
 ///===POPULAR FRONT COALITION===///
 /////////////////////////////////
-Q.popular_front_coalition = -3; // Accounts for BVP
-Q.popular_front_coalition += Q.spd_r;
-Q.popular_front_coalition += Q.kpd_r;
-Q.popular_front_coalition += Q.z_r;
-Q.popular_front_coalition += Q.ddp_r;
-Q.popular_front_coalition += Q.sapd_r;
+Q.popular_front_coalition = parseFloat(-3); // Accounts for lack of BVP
+Q.popular_front_coalition += parseFloat(Q.spd_r);
+Q.popular_front_coalition += parseFloat(Q.kpd_r);
+Q.popular_front_coalition += parseFloat(Q.z_r);
+Q.popular_front_coalition += parseFloat(Q.ddp_r);
+Q.popular_front_coalition += parseFloat(Q.sapd_r);
 ////////////////////////////////////
 ///===ANTI-DEMOCRATIC COALITION===///
 ////////////////////////////////////
-Q.anti_democratic_coalition = 0;
-Q.anti_democratic_coalition += Q.kpd_r;
-Q.anti_democratic_coalition += Q.nsdap_r;
-Q.anti_democratic_coalition += Q.dnvp_r;
+Q.anti_democratic_coalition = parseFloat(0);
+Q.anti_democratic_coalition += parseFloat(Q.kpd_r);
+Q.anti_democratic_coalition += parseFloat(Q.nsdap_r);
+Q.anti_democratic_coalition += parseFloat(Q.dnvp_r);
 /////////////////////////////////
 ///===NEO-WEIMAR COALITION===///
 /////////////////////////////////
-Q.neo_weimar_coalition = 0;
-Q.neo_weimar_coalition += Q.spd_r;
-Q.neo_weimar_coalition += Q.ddp_r;
-Q.neo_weimar_coalition += Q.z_r;
-Q.neo_weimar_coalition += Q.dvp_r;
-Q.neo_weimar_coalition += Q.dhp_r;
-Q.neo_weimar_coalition += Q.dbp_r;
-Q.neo_weimar_coalition += Q.cnblp_r;
-Q.neo_weimar_coalition += Q.wp_r;
-Q.neo_weimar_coalition += Q.vrp_r;
-Q.neo_weimar_coalition += Q.rlb_r;
-Q.neo_weimar_coalition += Q.slv_r;
+Q.neo_weimar_coalition = parseFloat(0);
+Q.neo_weimar_coalition += parseFloat(Q.spd_r);
+Q.neo_weimar_coalition += parseFloat(Q.ddp_r);
+Q.neo_weimar_coalition += parseFloat(Q.z_r);
+Q.neo_weimar_coalition += parseFloat(Q.dvp_r);
+Q.neo_weimar_coalition += parseFloat(Q.dhp_r);
+Q.neo_weimar_coalition += parseFloat(Q.dbp_r);
+Q.neo_weimar_coalition += parseFloat(Q.cnblp_r);
+Q.neo_weimar_coalition += parseFloat(Q.wp_r);
+Q.neo_weimar_coalition += parseFloat(Q.vrp_r);
+Q.neo_weimar_coalition += parseFloat(Q.rlb_r);
+Q.neo_weimar_coalition += parseFloat(Q.slv_r);
 ///////////////////////////////////
 ///===HITLER-RIGHT COALITION===///
 ///////////////////////////////////
-Q.hitler_right_coalition = 0;
-Q.hitler_right_coalition += Q.z_r;
-Q.hitler_right_coalition += Q.dnvp_r;
-Q.hitler_right_coalition += Q.nsdap_r;
+Q.hitler_right_coalition = parseFloat(0);
+Q.hitler_right_coalition += parseFloat(Q.z_r);
+Q.hitler_right_coalition += parseFloat(Q.dnvp_r);
+Q.hitler_right_coalition += parseFloat(Q.nsdap_r);
 ///////////////////////////////////
 ///===PROGRESSIVE COALITION===///
 ///////////////////////////////////
-Q.progressive_coalition = 0;
-Q.progressive_coalition += Q.spd_r;
-Q.progressive_coalition += Q.kpd_r;
-Q.progressive_coalition += Q.ddp_r;
-Q.progressive_coalition += Q.sapd_r;
+Q.progressive_coalition = parseFloat(0);
+Q.progressive_coalition += parseFloat(Q.spd_r);
+Q.progressive_coalition += parseFloat(Q.kpd_r);
+Q.progressive_coalition += parseFloat(Q.ddp_r);
+Q.progressive_coalition += parseFloat(Q.sapd_r);
 
 Q.leverage = Q.spd_r;
 
