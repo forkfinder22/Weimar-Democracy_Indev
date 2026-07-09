@@ -110,7 +110,7 @@ javascript// coalitions
 Q.weimar_coalition = parseFloat(-3); // Accounts for BVP not being in it
 Q.weimar_coalition += parseFloat(Q.spd_r);
 Q.weimar_coalition += parseFloat(Q.ddp_r);
-Q.weimar_coalition += parseFloat(Q.z_r);
+//Q.weimar_coalition += parseFloat(Q.z_r);
 Q.weimar_coalition_dhp = parseFloat(Q.weimar_coalition);
 Q.weimar_coalition_dhp += parseFloat(Q.dhp_r);
 if (Q.kpd_relation >= 30) {
@@ -123,14 +123,14 @@ if (Q.kpd_relation >= 30) {
 Q.grand_coalition = parseFloat(0);
 Q.grand_coalition += parseFloat(Q.spd_r);
 Q.grand_coalition += parseFloat(Q.ddp_r);
-Q.grand_coalition += parseFloat(Q.z_r);
+//Q.grand_coalition += parseFloat(Q.z_r);
 Q.grand_coalition += parseFloat(Q.dvp_r);
 ///////////////////////////////
 ///===BOURGEOIS COALITION===///
 ///////////////////////////////
 Q.bourgeois_coalition = parseFloat(0);
 Q.bourgeois_coalition += parseFloat(Q.ddp_r);
-Q.bourgeois_coalition += parseFloat(Q.z_r);
+//Q.bourgeois_coalition += parseFloat(Q.z_r);
 Q.bourgeois_coalition += parseFloat(Q.dvp_r);
 Q.bourgeois_coalition += parseFloat(Q.dhp_r);
 Q.bourgeois_coalition += parseFloat(Q.dbp_r);
@@ -143,7 +143,7 @@ Q.bourgeois_coalition += parseFloat(Q.slv_r);
 ///===CENTER-RIGHT COALITION===///
 ////////////////////////////////
 Q.center_right_coalition = parseFloat(0);
-Q.center_right_coalition += parseFloat(Q.z_r);
+//Q.center_right_coalition += parseFloat(Q.z_r);
 Q.center_right_coalition += parseFloat(Q.ddp_r);
 Q.center_right_coalition += parseFloat(Q.dvp_r);
 Q.center_right_coalition += parseFloat(Q.dnvp_r);
@@ -158,7 +158,7 @@ Q.center_right_coalition += parseFloat(Q.slv_r);
 ///===RIGHT COALITION===///
 ////////////////////////////
 Q.right_coalition = parseFloat(0);
-Q.right_coalition += parseFloat(Q.z_r);
+//Q.right_coalition += parseFloat(Q.z_r);
 Q.right_coalition += parseFloat(Q.dvp_r);
 Q.right_coalition += parseFloat(Q.dnvp_r);
 Q.right_coalition += parseFloat(Q.dhp_r);
@@ -187,7 +187,7 @@ Q.left_coalition += parseFloat(Q.sapd_r);
 Q.popular_front_coalition = parseFloat(-3); // Accounts for lack of BVP
 Q.popular_front_coalition += parseFloat(Q.spd_r);
 Q.popular_front_coalition += parseFloat(Q.kpd_r);
-Q.popular_front_coalition += parseFloat(Q.z_r);
+//Q.popular_front_coalition += parseFloat(Q.z_r);
 Q.popular_front_coalition += parseFloat(Q.ddp_r);
 Q.popular_front_coalition += parseFloat(Q.sapd_r);
 ////////////////////////////////////
@@ -203,7 +203,7 @@ Q.anti_democratic_coalition += parseFloat(Q.dnvp_r);
 Q.neo_weimar_coalition = parseFloat(0);
 Q.neo_weimar_coalition += parseFloat(Q.spd_r);
 Q.neo_weimar_coalition += parseFloat(Q.ddp_r);
-Q.neo_weimar_coalition += parseFloat(Q.z_r);
+//Q.neo_weimar_coalition += parseFloat(Q.z_r);
 Q.neo_weimar_coalition += parseFloat(Q.dvp_r);
 Q.neo_weimar_coalition += parseFloat(Q.dhp_r);
 Q.neo_weimar_coalition += parseFloat(Q.dbp_r);
@@ -216,7 +216,7 @@ Q.neo_weimar_coalition += parseFloat(Q.slv_r);
 ///===HITLER-RIGHT COALITION===///
 ///////////////////////////////////
 Q.hitler_right_coalition = parseFloat(0);
-Q.hitler_right_coalition += parseFloat(Q.z_r);
+//Q.hitler_right_coalition += parseFloat(Q.z_r);
 Q.hitler_right_coalition += parseFloat(Q.dnvp_r);
 Q.hitler_right_coalition += parseFloat(Q.nsdap_r);
 ///////////////////////////////////
@@ -276,7 +276,9 @@ Q.reichswehr_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 
-Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_minus_bvp_r = parseFloat(0);
+Q.z_minus_bvp_r -= parseFloat(Q.z_r); 
+Q.z_minus_bvp_r -= parseFloat(3);
 
 // understanding the enemy
 if (Q.nsdap_r >= 15) {
