@@ -579,10 +579,10 @@ if (Q.agr_cc >= 12 && Q.agr_awakened) {
     Q.dbp_left += 0.01;
     Q.cnblp_left += 0.009;
     Q.rlb_left += 0.008;
-    Q.slv += 0.007;
-    Q.dhp += 0.006;
-    Q.vrp += 0.002;
-    Q.wp += 0.001;
+    Q.slv_left += 0.007;
+    Q.dhp_left += 0.006;
+    Q.vrp_left += 0.002;
+    Q.wp_left += 0.001;
 }
 /// ---------------------------------- ///
 /// AGRARIAN SOCIALIST UPDATE |||||||| ///

@@ -44,7 +44,7 @@ var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
     if (Q.constitutional_reform > 0) {
-        if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
+        if (Q[party + '_votes'] < Q.electoral_threshold || Q[party + '_banned']) {
             Q[party + '_r'] = 0;
         } else {
             Q[party + '_r'] = Q[party + '_votes'];
@@ -55,7 +55,7 @@ for (var party of Q.parties) {
     }
     // if we use decimals, then we might want to truncate the numbers
     if (Q.use_decimals) {
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(2);
     }  else {
             Q[party + '_r_disp'] = Q[party+'_r'];
     }
@@ -63,6 +63,7 @@ for (var party of Q.parties) {
     var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
     Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(2);
 }
+Q.z_r = Q.z_votes
 // calculate new party sum if electoral reform
 if (Q.electoral_threshold && Q.electoral_threshold > 0) {
     for (var party of Q.parties) {
@@ -104,37 +105,23 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
 }
 
 // coalitions
-Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(2));
-Q.weimar_coalition_dhp = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3 + Q.dhp_r).toFixed(2));
-Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(2));
-Q.bourgeois_coalition = parseFloat((Q.ddp_r + Q.z_r + Q.dvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r).toFixed(2));
-Q.center_right_coalition = parseFloat((Q.z_r + Q.ddp_r + Q.dvp_r + Q.dnvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r).toFixed(2));
-Q.right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.dnvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r).toFixed(2));
-Q.far_right_coalition = parseFloat((Q.dnvp_r + Q.nsdap_r).toFixed(2));
-Q.left_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.sapd_r).toFixed(2));
+Q.weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r - 3);
+Q.weimar_coalition_dhp = (Q.spd_r + Q.ddp_r + Q.z_r - 3 + Q.dhp_r);
+Q.grand_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r);
+Q.bourgeois_coalition = (Q.ddp_r + Q.z_r + Q.dvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r);
+Q.center_right_coalition = (Q.z_r + Q.ddp_r + Q.dvp_r + Q.dnvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r);
+Q.right_coalition = (Q.z_r + Q.dvp_r + Q.dnvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r);
+Q.far_right_coalition = (Q.dnvp_r + Q.nsdap_r);
+Q.left_coalition = (Q.spd_r + Q.kpd_r + Q.sapd_r);
 // this is an absurd concept lol
-Q.popular_front_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r).toFixed(2));
-Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnvp_r).toFixed(2));
+Q.popular_front_coalition = (Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r);
+Q.anti_democratic_coalition = (Q.kpd_r + Q.nsdap_r + Q.dnvp_r);
 // aka everyone except nazi, kpd, dnvp
-Q.neo_weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r).toFixed(2));
+Q.neo_weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.dhp_r + Q.dbp_r + Q.cnblp_r + Q.wp_r + Q.vrp_r + Q.rlb_r + Q.slv_r);
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
-Q.hitler_right_coalition = parseFloat((Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(2));
+Q.hitler_right_coalition = (Q.z_r + Q.dnvp_r + Q.nsdap_r);
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(2));
-
-Q.weimar_coalition = parseFloat(Q.weimar_coalition.toFixed(2));
-Q.weimar_coalition_dhp = parseFloat(Q.weimar_coalition_dhp.toFixed(2));
-Q.grand_coalition = parseFloat(Q.grand_coalition.toFixed(2));
-Q.bourgeois_coalition = parseFloat(Q.bourgeois_coalition.toFixed(2));
-Q.center_right_coalition = parseFloat(Q.center_right_coalition.toFixed(2));
-Q.right_coalition = parseFloat(Q.right_coalition.toFixed(2));
-Q.far_right_coalition = parseFloat(Q.far_right_coalition.toFixed(2));
-Q.left_coalition = parseFloat(Q.left_coalition.toFixed(2));
-Q.popular_front_coalition = parseFloat(Q.popular_front_coalition.toFixed(2));
-Q.anti_democratic_coalition = parseFloat(Q.anti_democratic_coalition.toFixed(2));
-Q.neo_weimar_coalition = parseFloat(Q.neo_weimar_coalition.toFixed(2));
-Q.hitler_right_coalition = parseFloat(Q.hitler_right_coalition.toFixed(2));
-Q.progressive_coalition = parseFloat(Q.progressive_coalition.toFixed(2));
+Q.progressive_coalition = (Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r);
 
 if (Q.kpd_relation >= 30) {
     Q.weimar_coalition += Q.sapd_r;
