@@ -14,9 +14,6 @@ What should our foreign policy priority be?
 
 @fp_menu
 
-- @improve_west
-- @improve_east
-- @improve_soviet
 - @customs_union
 - @expose
 - @european_union
@@ -26,70 +23,10 @@ What should our foreign policy priority be?
 - @support_austria
 - @support_austria_2
 - @tov_sc
+- @genimpr
 - @root: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
-
-@improve_west
-title: Improve our relations with the Western Allies.
-on-arrival: west_relation += 2; reparations_negotiation += 1
-
-The key to peace in Europe is a rapproachment between France and Germany. We are taking steps towards that rapproachment. [? if young_plan_seen == 0 : This is difficult to do when France is occupying a major portion of Germany's territory, but we are working on that part. ?]
-
-@improve_east
-title: Improve our relations with our eastern neighbors.
-on-arrival: east_relation += 2;
-
-We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
-
-@improve_soviet
-title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the KPD...
-
-The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
-
-The Soviets are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the Soviets for secret assistance in training and equiping the Reichswehr.
-
-- @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
-- @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
-- @soviet_economic_aid_no: Don't provide aid.
-
-@soviet_economic_aid_yes_mil
-choose-if: budget >= 1
-subtitle: -1 budget
-on-arrival: budget -= 1; soviet_relation += 1; reichswehr_militancy += 0.2; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
-
-The Soviets are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
-
-@soviet_economic_aid_yes
-choose-if: budget >= 1
-subtitle: -1 budget
-on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
-
-The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
-
-- @kpd: Ask if Moscow could help repair our relations with the KPD.
-- @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the KPD.
-
-@soviet_economic_aid_no
-
-The Soviets are slightly upset, but they seemed to expect this answer.
-
-
-@kpd
-on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
-
-We also mention the KPD in our conversations with the Soviet ambassador. They claim that the KPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the KPD.
-
-@wittorf
-view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
-unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
-on-arrival: wittorf_soviet_union = 1; kpd_relation += 6*(1-dissent); kpd_foreign_seen = 1
-max-visits: 1
-
-Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
-
 
 @customs_union
 title: Form a customs union with Austria?
@@ -335,3 +272,147 @@ wip
 @backtov
 title: Negotiate other sections of Versailles
 go-to: tov_sc
+
+@genimpr
+title: Improve relations with other countries
+
+- @improve_west
+- @improve_east
+- @improve_south
+- @improve_north
+- @improve_low
+- @improve_iber
+- @improve_balk
+- @improve_balt
+- @improve_other
+- @improve_postsov
+- @improve_soviet
+- @fp_menu: Back to Top
+
+@improve_west
+title: Improve relations with our western neighbors
+
+- @improve_fra
+- @improve_bri
+- @genimpr
+
+@improve_fra
+title: Improve our relations with France
+on-arrival: fra_relation += 2; reparations_negotiation += 0.5
+
+The key to peace in Europe is a rapproachment between France and Germany. We are taking steps towards that rapproachment. [? if young_plan_seen == 0 : This is difficult to do when France is occupying a major portion of Germany's territory, but we are working on that part. ?]
+
+@improve_bri
+title: Improve our relations with Britain
+on-arrival: bri_relation += 2; reparations_negotiation += 0.5
+
+Germany and Britain have never had as hot a rivalry with each other as Germany with France, and improving relations with them comes more naturally
+
+@improve_east
+title: Improve relations with our eastern neighbors.
+
+We also aim to improve relations with our eastern neighbors, Poland and Czechoslovakia, who are righfully terrified of German aggression. Hopefully we can convince them of our peaceful intentions.
+
+- @improve_pol
+- @improve_cze
+- @genimpr
+
+@improve_pol
+title: Improve our relations with Poland
+on-arrival: pol_relation += 2; reparations_negotiation += 0.5
+
+WIP
+
+@improve_cze
+title: Improve our relations with Czechoslovakia
+on-arrival: cze_relation += 2; reparations_negotiation += 0.5
+
+WIP
+
+@improve_soviet
+title: Improve our relations with the Soviet Union.
+subtitle: We could also broach the question of the KPD...
+
+The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
+
+The Soviets are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the Soviets for secret assistance in training and equiping the Reichswehr.
+
+- @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
+- @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
+- @soviet_economic_aid_no: Don't provide aid.
+
+@soviet_economic_aid_yes_mil
+choose-if: budget >= 1
+subtitle: -1 budget
+on-arrival: budget -= 1; soviet_relation += 1; reichswehr_militancy += 0.2; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
+
+The Soviets are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
+
+@soviet_economic_aid_yes
+choose-if: budget >= 1
+subtitle: -1 budget
+on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
+
+The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
+
+- @kpd: Ask if Moscow could help repair our relations with the KPD.
+- @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
+- @root: Do not mention the KPD.
+
+@soviet_economic_aid_no
+
+The Soviets are slightly upset, but they seemed to expect this answer.
+
+
+@kpd
+on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
+
+We also mention the KPD in our conversations with the Soviet ambassador. They claim that the KPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the KPD.
+
+@wittorf
+view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0
+unavailable-subtitle: It is impossible that Stalin and the Comintern could be moved on their policy.
+on-arrival: wittorf_soviet_union = 1; kpd_relation += 6*(1-dissent); kpd_foreign_seen = 1
+max-visits: 1
+
+Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
+
+@improve_south
+title: Improve relations with our WIP neighbors
+
+- @genimpr
+
+@improve_north
+title: Improve relations with our WIP neighbors
+
+- @genimpr
+
+@improve_low
+title: Improve relations with our WIP neighbors
+
+- @genimpr
+
+@improve_iber
+title: Improve relations with our WIP neighbors
+
+- @genimpr
+
+@improve_balk
+title: Improve relations with our WIP neighbors
+
+- @genimpr
+
+@improve_balt
+title: Improve relations with our WIP neighbors
+
+- @genimpr
+
+@improve_other
+title: Improve relations with our WIP neighbors
+
+- @genimpr
+
+@improve_postsov
+title: Improve relations with our WIP neighbors
+
+- @genimpr
