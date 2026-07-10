@@ -62,6 +62,7 @@ The end date has been enabled.
 - @intereu: Deal with the EU
 - @interconcor: Deal with the Concordat
 - @interaust: Deal with the Austrian Civil War
+- @interlev: Deal with ToV stuff
 
 @interwest
 
@@ -342,7 +343,7 @@ on-arrival: reichskonkordat_progress -= 1;
 go-to: interconcor
 
 @formcon
-on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front; foreign_goal_spd_peoples += 1
+on-arrival: reichskonkordat = 1
 go-to: interconcor
 
 @incrprucon
@@ -354,7 +355,7 @@ on-arrival: prussian_concordat_progress -= 1;
 go-to: interconcor
 
 @formprucon
-on-arrival: prussian_concordat = 1; z_relation += 8; catholics_spd += 3*(1-dissent); catholics_dnvp -= 2 if dnvp_ideology == "Radical"; ddp_relation -= 2; ddp_cohesion -= 0.5; lvp_relation -= 2
+on-arrival: prussian_concordat = 1;
 go-to: interconcor
 
 @interaust
@@ -370,6 +371,37 @@ wip
 @decraust
 
 wip
+
+@interlev
+- @bigincrlev: Increase Diplomatic Leverage by 5
+- @incrlev: Increase Diplomatic Leverage by 1
+- @decrlev: Decrease Diplomatic Leverage by 1
+- @bigdecrlev: Decrease Diplomatic Leverage by 5
+- @returnsandbox: Return to Sandbox
+
+@bigincrlev
+on-arrival: diplomatic_leverage += 5
+go-to: interlev
+
+Increased diplomatic leverage by 5 
+
+@incrlev
+on-arrival: diplomatic_leverage += 1
+go-to: interlev
+
+Increased diplomatic leverage by 1
+
+@decrlev
+on-arrival: diplomatic_leverage -= 1
+go-to: interlev
+
+Decreased diplomatic leverage by 1
+
+@bigdecrlev
+on-arrival: diplomatic_leverage -= 5
+go-to: interlev
+
+Decreased diplomatic leverage by 5 
 
 @nat_rep_support
 
