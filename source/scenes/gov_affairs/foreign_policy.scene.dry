@@ -697,6 +697,8 @@ title: Improve relations with our WIP neighbors
 - @genimpr
 
 @improve_postsov
-title: Improve relations with our WIP neighbors
+title: Improve relations with the various Post-Soviet Countries
+unavailable-subtitle: The Soviet Union still exists
+choose-if: soviet_collapse = 1
 
 - @genimpr

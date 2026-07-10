@@ -557,7 +557,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'schleichers_schemes',
             // SPD internal
-            'agr_cc_timer'];
+            'agr_cc'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -659,9 +659,75 @@ Q.mon_relation = 0;
 Q.ita_relation = 0;
 Q.swi_relation = 0;
 Q.aus_relation = 0;
+Q.relation_array = [
+    // This is to mass increase/decrease relations
+    'fra', 'bri', 'net', 'bel', 'lux', 'por', 'spa', 'por', 'cze',
+    // North + Baltic + Sovet & Post-Soviet
+    'soviet', 'lit', 'lat', 'est', 'nor', 'swe', 'fin', 'den', 'ukr', 'blr', 'geo', 'che', 'azr', 'arm', 
+    // Balkan
+    'yug', 'bul', 'hun', 'alb', 'rom', 'gre',
+    // Other
+    'ice', 'ire', 'lic', 'san_mar', 'vat', 'and', 'mon', 'ita', 'swi', 'aus' 
+]
+// Tension - Relations can be high, but tense, or low, but calm. Tension is basically how many things have happen between Germany and the other country, that mainly benefits Germany. 
+//A relationship with high tension means any diplomatic action thats isn't just improving relations must significantly benefit the target country. 
+// This mechanic is meant to prevent Germany from just doing thing after thing and removing article after article of Versailles. 
+// Tension should decrese slowly over time, and certain event or actions can helps it decrease quicker
+// Tension should be on a scale of 0-100
+Q.fra_tension = 80; // French Tension should be slightly higher than British tension
+Q.bri_tension = 75; // British/French tensions should be high
+Q.net_tension = 20; // Not really too much tension here, probably
+Q.bel_tension = 65; // A bit high, germany kind of wrecked them in the Great War
+Q.lux_tension = 40; // Not too much, but germany is big and threatening
+Q.por_tension = 10; // Basically none, other than the Anglo-Portuguese alliance
+Q.spa_tension = 5; // Again, basically none
+Q.pol_tension = 85; // Really high
+Q.cze_tension = 80; // Also high, but a bit lower
+Q.soviet_tension = 40; // Higher just because of ideological differences
+Q.lit_tension = 70; // Memel is probably a big issue... 
+Q.lat_tension = 20; // Not much, mostly proximity
+Q.est_tension = 5; // very small
+Q.nor_tension = 5; // Very small
+Q.swe_tension = 10; // a bit higher?
+Q.fin_tension = 5; // very small 
+Q.den_tension = 30; // Annexations of Schleswig, small country next to big country
+Q.ukr_tension = 0; // Doesn't exist
+Q.blr_tension = 0; // Doesn't exist
+Q.geo_tension = 0; // Doesn't exist
+Q.che_tension = 0; // Doesn't exist
+Q.azr_tension = 0; // Doesn't exist
+Q.arm_tension = 0; // Doesn't exist
+Q.yug_tension = 25; // Shouldn't be too high..
+Q.bul_tension = 5; // Very small 
+Q.hun_tension = 5;
+Q.alb_tension = 5;
+Q.rom_tension = 10; // German minorities in Romania 
+Q.gre_tension = 5; // Very small
+Q.ice_tension = 0;
+Q.ire_tension = 0;
+Q.lic_tension = 20; // Higher due to proximity
+Q.san_mar_tension = 5; // Very small
+Q.vat_tension = 30; // Higher to possibly slow down a Reichskonkordat if Germany does too much ToV undoing or what not, though the Prussian, Württemberg, Bavarian concordats should slow this down 
+Q.and_tension = 5; // Very small
+Q.mon_tension = 5;
+Q.ita_tension = 10; // Ethnic austrian minortiy (Was it still a majority by 1928?) in sudtirol
+Q.swi_tension = 50; // Close, neutrality
+Q.aus_tension = 70; // Anschluss is hard 
+Q.tension_array = [
+    // This is to mass increase/decrease tensions
+    'fra', 'bri', 'net', 'bel', 'lux', 'por', 'spa', 'por', 'cze',
+    // North + Baltic + Sovet & Post-Soviet
+    'soviet', 'lit', 'lat', 'est', 'nor', 'swe', 'fin', 'den', 'ukr', 'blr', 'geo', 'che', 'azr', 'arm', 
+    // Balkan
+    'yug', 'bul', 'hun', 'alb', 'rom', 'gre',
+    // Other
+    'ice', 'ire', 'lic', 'san_mar', 'vat', 'and', 'mon', 'ita', 'swi', 'aus' 
+]
 // Gen relations
 Q.west_relation = 0;
 Q.east_relation = 0;
+// Foreign events
+soviet_collapse = 0; // Has the Soviet Union collapsed?
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
