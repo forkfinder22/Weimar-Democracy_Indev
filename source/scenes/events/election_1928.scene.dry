@@ -485,6 +485,13 @@ There are some potential coalition arrangements.
 - @left_coalition
 - @popular_front_coalition
 - @right_coalition
+- @secret_minority
+
+@secret_minority
+title: Super Secret minority coalition
+subtitle: SPD (100%)
+chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; in_spd_majority = 1; pro_republic += 5; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"; interior_minister_party = "SPD"; interior_minister = "Severing"; justice_minister_party = "SPD"; justice_minister = "Radbruch"; labor_minister_party = "SPD"; labor_minister = "Wissell"; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; economic_minister_party = "SPD"; economic_minister = "Schmidt"; finance_minister_party = "SPD"; finance_minister = "Hilferding"; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"; reichswehr_loyalty -= 0.05; 
+go-to: braun_majority_chancellor
 
 # TODO: black-brown coalition
 
