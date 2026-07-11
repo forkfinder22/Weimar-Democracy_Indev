@@ -662,39 +662,234 @@ max-visits: 1
 Of course Stalin and the various leaders of the Comintern know about the Wittorf Affair, but they do not seem to know that we know as well. The Comintern was planning to build a narrative around the affair that absolves Thälmann, but perhaps now they will be less inclined to defend him.
 
 @improve_south
-title: Improve relations with our WIP neighbors
+title: Improve relations with our Southern neighbors
 
+- @impr_ita
+- @impr_aus 
+- @impr_lic
+- @impr_swi
+- @impr_vat
+- @impr_sanmar
 - @genimpr
+
+@improve_lic
+title: Improve our relations with WIP
+on-arrival: lic_tension += 2;
+
+WIP
+
+@improve_san_mar
+title: Improve our relations with WIP
+on-arrival: san_mar_tension += 2;
+
+WIP
+
+@improve_vat
+title: Improve our relations with WIP
+on-arrival: vat_tension += 2;
+
+WIP
+
+@improve_ita
+title: Improve our relations with WIP
+on-arrival: ita_tension += 2;
+
+WIP
+
+@improve_swi
+title: Improve our relations with WIP
+on-arrival: swi_tension += 2;
+
+WIP
+
+@improve_aus
+title: Improve our relations with WIP
+on-arrival: aus_tension += 2;
+
+WIP
 
 @improve_north
-title: Improve relations with our WIP neighbors
+title: Improve relations with our Northern neighbours
 
+- @impr_den
+- @impr_nor
+- @impr_swe
+- @impr_fin
+- @impr_ice
+- @impr_ire
 - @genimpr
+
+@improve_nor
+title: Improve our relations with WIP
+on-arrival: nor_tension += 2;
+
+WIP
+
+@improve_swe
+title: Improve our relations with WIP
+on-arrival: swe_tension += 2;
+
+WIP
+
+@improve_fin
+title: Improve our relations with WIP
+on-arrival: fin_tension += 2;
+
+WIP
+
+@improve_den
+title: Improve our relations with WIP
+on-arrival: den_tension += 2;
+
+WIP
+
+@improve_ice
+title: Improve our relations with WIP
+on-arrival: ice_tension += 2;
+
+WIP
+
+@improve_ire
+title: Improve our relations with WIP
+on-arrival: ire_tension += 2;
+
+WIP
 
 @improve_low
-title: Improve relations with our WIP neighbors
+title: Improve relations with the Benelx countries
 
+- @impr_net
+- @impr_bel
+- @impr_lux
 - @genimpr
+
+@improve_net
+title: Improve our relations with WIP
+on-arrival: net_tension += 2;
+
+WIP
+
+@improve_bel
+title: Improve our relations with WIP
+on-arrival: bel_tension += 2;
+
+WIP
+
+@improve_lux
+title: Improve our relations with WIP
+on-arrival: lux_tension += 2;
+
+WIP
 
 @improve_iber
-title: Improve relations with our WIP neighbors
+title: Improve relations with the Iberian countries
 
+- @impr_spa
+- @impr_por
+- @impr_and
 - @genimpr
+
+@improve_por
+title: Improve our relations with WIP
+on-arrival: por_tension += 2;
+
+WIP
+
+@improve_spa
+title: Improve our relations with WIP
+on-arrival: spa_tension += 2;
+
+WIP
+
+@improve_and
+title: Improve our relations with WIP
+
+wip
 
 @improve_balk
-title: Improve relations with our WIP neighbors
+title: Improve relations with the Balkan countries
 
+- @impr_yug
+- @impr_hun
+- @impr_rom
+- @impr_bul
+- @impr_gre
+- @impr_alb
 - @genimpr
+
+@improve_yug
+title: Improve our relations with WIP
+on-arrival: yug_tension += 2;
+
+WIP
+
+@improve_bul
+title: Improve our relations with WIP
+on-arrival: bul_tension += 2;
+
+WIP
+
+@improve_hun
+title: Improve our relations with WIP
+on-arrival: hun_tension += 2;
+
+WIP
+
+@improve_alb
+title: Improve our relations with WIP
+on-arrival: alb_tension += 2;
+
+WIP
+
+@improve_rom
+title: Improve our relations with WIP
+on-arrival: rom_tension += 2;
+
+WIP
+
+@improve_gre
+title: Improve our relations with WIP
+on-arrival: gre_tension += 2;
+
+WIP
 
 @improve_balt
-title: Improve relations with our WIP neighbors
+title: Improve relations with the Baltic countries
 
+- @impr_lit
+- @impr_lat
+- @impr_est
 - @genimpr
+
+@improve_lit
+title: Improve our relations with WIP
+on-arrival: lit_tension += 2;
+
+WIP
+
+@improve_lat
+title: Improve our relations with WIP
+on-arrival: lat_tension += 2;
+
+WIP
+
+@improve_est
+title: Improve our relations with WIP
+on-arrival: est_tension += 2;
+
+WIP
 
 @improve_other
-title: Improve relations with our WIP neighbors
+title: Improve relations with the other countries of Europe
 
+- @impr_mon
 - @genimpr
+
+@improve_mon
+title: Improve our relations with WIP
+on-arrival: mon_tension += 2;
+
+WIP
 
 @improve_postsov
 title: Improve relations with the various Post-Soviet Countries
