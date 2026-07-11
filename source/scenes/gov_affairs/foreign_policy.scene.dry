@@ -678,7 +678,7 @@ on-arrival: lic_tension += 2;
 
 WIP
 
-@improve_san_mar
+@improve_sanmar
 title: Improve our relations with WIP
 on-arrival: san_mar_tension += 2;
 
@@ -785,7 +785,7 @@ WIP
 title: Improve relations with the Iberian countries
 
 - @improve_spa
-- @imprpve_por
+- @improve_por
 - @improve_and
 - @genimpr
 
