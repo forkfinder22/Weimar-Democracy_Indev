@@ -664,12 +664,12 @@ Of course Stalin and the various leaders of the Comintern know about the Wittorf
 @improve_south
 title: Improve relations with our Southern neighbors
 
-- @impr_ita
-- @impr_aus 
-- @impr_lic
-- @impr_swi
-- @impr_vat
-- @impr_sanmar
+- @improve_ita
+- @improve_aus 
+- @improve_lic
+- @improve_swi
+- @improve_vat
+- @improve_sanmar
 - @genimpr
 
 @improve_lic
@@ -711,12 +711,12 @@ WIP
 @improve_north
 title: Improve relations with our Northern neighbours
 
-- @impr_den
-- @impr_nor
-- @impr_swe
-- @impr_fin
-- @impr_ice
-- @impr_ire
+- @improve_den
+- @improve_nor
+- @improve_swe
+- @improve_fin
+- @improve_ice
+- @improve_ire
 - @genimpr
 
 @improve_nor
@@ -758,9 +758,9 @@ WIP
 @improve_low
 title: Improve relations with the Benelx countries
 
-- @impr_net
-- @impr_bel
-- @impr_lux
+- @improve_net
+- @improve_bel
+- @improve_lux
 - @genimpr
 
 @improve_net
@@ -784,9 +784,9 @@ WIP
 @improve_iber
 title: Improve relations with the Iberian countries
 
-- @impr_spa
-- @impr_por
-- @impr_and
+- @improve_spa
+- @imprpve_por
+- @improve_and
 - @genimpr
 
 @improve_por
@@ -809,12 +809,12 @@ wip
 @improve_balk
 title: Improve relations with the Balkan countries
 
-- @impr_yug
-- @impr_hun
-- @impr_rom
-- @impr_bul
-- @impr_gre
-- @impr_alb
+- @improve_yug
+- @improve_hun
+- @improve_rom
+- @improve_bul
+- @improve_gre
+- @improve_alb
 - @genimpr
 
 @improve_yug
@@ -856,9 +856,9 @@ WIP
 @improve_balt
 title: Improve relations with the Baltic countries
 
-- @impr_lit
-- @impr_lat
-- @impr_est
+- @improve_lit
+- @improve_lat
+- @improve_est
 - @genimpr
 
 @improve_lit
@@ -882,7 +882,7 @@ WIP
 @improve_other
 title: Improve relations with the other countries of Europe
 
-- @impr_mon
+- @improve_mon
 - @genimpr
 
 @improve_mon
