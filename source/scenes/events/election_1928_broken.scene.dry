@@ -1450,11 +1450,11 @@ We can pick from any number of ministries. Controlling a ministry allows us to d
 title: Labor Ministry
 subtitle: Taking the Labor Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1928_b
 choose-if: leverage >= 5
 view-if: labor_minister_party != "SPD"
 on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
-go-to: ministries_b
+go-to: ministries
 
 Rudolf Wissell of the SPD has been appointed labor minister.
 
@@ -1462,11 +1462,11 @@ Rudolf Wissell of the SPD has been appointed labor minister.
 title: Interior Ministry
 subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1928_b
 choose-if: leverage >= 5
 view-if: interior_minister_party != "SPD"
 on-arrival: leverage -= 5; interior_minister_party = "SPD"; interior_minister = "Severing"
-go-to: ministries_b
+go-to: ministries
 
 Carl Severing of the SPD has been appointed Interior Minister.
 
@@ -1474,11 +1474,11 @@ Carl Severing of the SPD has been appointed Interior Minister.
 title: Finance Ministry
 subtitle: The Finance Ministry controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1928_b
 choose-if: leverage >= 10 
 view-if: finance_minister_party != "SPD"
 on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
-go-to: ministries_b
+go-to: ministries
 
 Rudolf Hilferding of the SPD has been appointed Finance Minister.
 
@@ -1486,11 +1486,11 @@ Rudolf Hilferding of the SPD has been appointed Finance Minister.
 title: Economic Ministry
 subtitle: The Economic Ministry controls broader economic policy.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1928_b
 choose-if: leverage >= 10 
 view-if: economic_minister_party != "SPD"
 on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
-go-to: ministries_b
+go-to: ministries
 
 Robert Schmidt of the SPD has been appointed Economic Minister.
 
@@ -1498,11 +1498,11 @@ Robert Schmidt of the SPD has been appointed Economic Minister.
 title: Justice Ministry
 subtitle: The Justice Ministry controls the courts.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1928_b
 choose-if: leverage >= 10 
 view-if: justice_minister_party != "SPD"
 on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
-go-to: ministries_b
+go-to: ministries
 
 Gustav Radbruch of the SPD has been appointed Justice Minister.
 
@@ -1510,11 +1510,11 @@ Gustav Radbruch of the SPD has been appointed Justice Minister.
 title: Foreign Ministry
 subtitle: This is usually the domain of Gustav Stresemann of the DVP.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1928_b
 choose-if: leverage >= 10 
 view-if: foreign_minister_party != "SPD"
 on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
-go-to: ministries_b
+go-to: ministries
 
 Rudolf Breitscheid of the SPD has been appointed Foreign Minister.
 
@@ -1535,7 +1535,7 @@ Fritz Baade of the SPD has been appointed Agriculture Minister.
 title: Reichswehr Ministry
 subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
+tags: mins_1928_b
 choose-if: leverage >= 15 
 view-if: reichswehr_minister_party != "SPD"
 on-arrival: leverage -= 15; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"
