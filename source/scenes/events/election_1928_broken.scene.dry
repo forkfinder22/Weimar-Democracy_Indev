@@ -2,10 +2,9 @@ title: Reichstag Elections
 new-page: true
 tags: event
 priority: -1
-view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
+### view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
 on-departure: month_actions += 1; in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; papen_chancellor_timer = 4;
 set-jump: post_election_1928
-face-image: img/Rothe_Wahlen_1903.jpg
 
 # TODO: should there be an image?
 
@@ -45,7 +44,7 @@ var new_party_sum = 0;
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
     if (Q.constitutional_reform > 0) {
-        if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
+        if (Q[party + '_votes'] < Q.electoral_threshold || Q[party + '_banned']) {
             Q[party + '_r'] = 0;
         } else {
             Q[party + '_r'] = Q[party + '_votes'];
@@ -56,13 +55,13 @@ for (var party of Q.parties) {
     }
     // if we use decimals, then we might want to truncate the numbers
     if (Q.use_decimals) {
-        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(1);
+        Q[party + '_r_disp'] = Q[party+'_r'].toFixed(2);
     }  else {
             Q[party + '_r_disp'] = Q[party+'_r'];
     }
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
     var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-    Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+    Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(2);
 }
 // calculate new party sum if electoral reform
 if (Q.electoral_threshold && Q.electoral_threshold > 0) {
@@ -81,7 +80,13 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         }
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-        Q['str_change_' + party] = sign + Q['change_' + party + '_r'];//.toFixed(1);
+        Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(2);
+    }
+}
+// Ensure no floating points
+for (var party of Q.parties) {
+    if (Q[party + '_r'] > 0) {
+        Q[party + '_r'] = Q[party + '_r'].toFixed(2);
     }
 }
 
@@ -98,27 +103,130 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
     Q.largest_party = 'KPD';
 }
 
-// coalitions
-Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r - 3;
-Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
-Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.right_coalition = Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
-Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
-Q.left_coalition = Q.spd_r + Q.kpd_r + Q.sapd_r;
-// this is an absurd concept lol
-Q.popular_front_coalition = Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r;
-Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r + Q.dnvp_r;
-// aka everyone except nazi, kpd, dnvp
-Q.neo_weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
-// Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
-Q.hitler_right_coalition = Q.z_r + Q.dnvp_r + Q.nsdap_r;
-// Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r;
-
+javascript// coalitions
+////////////////////////////
+///===WEIMAR COALITION===///
+////////////////////////////
+Q.weimar_coalition = parseFloat(-3); // Accounts for BVP not being in it
+Q.weimar_coalition += parseFloat(Q.spd_r);
+Q.weimar_coalition += parseFloat(Q.ddp_r);
+//Q.weimar_coalition += parseFloat(Q.z_r);
+Q.weimar_coalition_dhp = parseFloat(Q.weimar_coalition);
+Q.weimar_coalition_dhp += parseFloat(Q.dhp_r);
 if (Q.kpd_relation >= 30) {
-    Q.weimar_coalition += Q.sapd_r;
+    Q.weimar_coalition += parseFloat(Q.sapd_r);
+    Q.weimar_coalition_dhp += parseFloat(Q.sapd_r);
 }
+///////////////////////////
+///===GRAND COALITION===///
+///////////////////////////
+Q.grand_coalition = parseFloat(0);
+Q.grand_coalition += parseFloat(Q.spd_r);
+Q.grand_coalition += parseFloat(Q.ddp_r);
+//Q.grand_coalition += parseFloat(Q.z_r);
+Q.grand_coalition += parseFloat(Q.dvp_r);
+///////////////////////////////
+///===BOURGEOIS COALITION===///
+///////////////////////////////
+Q.bourgeois_coalition = parseFloat(0);
+Q.bourgeois_coalition += parseFloat(Q.ddp_r);
+//Q.bourgeois_coalition += parseFloat(Q.z_r);
+Q.bourgeois_coalition += parseFloat(Q.dvp_r);
+Q.bourgeois_coalition += parseFloat(Q.dhp_r);
+Q.bourgeois_coalition += parseFloat(Q.dbp_r);
+Q.bourgeois_coalition += parseFloat(Q.cnblp_r);
+Q.bourgeois_coalition += parseFloat(Q.wp_r);
+Q.bourgeois_coalition += parseFloat(Q.vrp_r);
+Q.bourgeois_coalition += parseFloat(Q.rlb_r);
+Q.bourgeois_coalition += parseFloat(Q.slv_r);
+////////////////////////////////
+///===CENTER-RIGHT COALITION===///
+////////////////////////////////
+Q.center_right_coalition = parseFloat(0);
+//Q.center_right_coalition += parseFloat(Q.z_r);
+Q.center_right_coalition += parseFloat(Q.ddp_r);
+Q.center_right_coalition += parseFloat(Q.dvp_r);
+Q.center_right_coalition += parseFloat(Q.dnvp_r);
+Q.center_right_coalition += parseFloat(Q.dhp_r);
+Q.center_right_coalition += parseFloat(Q.dbp_r);
+Q.center_right_coalition += parseFloat(Q.cnblp_r);
+Q.center_right_coalition += parseFloat(Q.wp_r);
+Q.center_right_coalition += parseFloat(Q.vrp_r);
+Q.center_right_coalition += parseFloat(Q.rlb_r);
+Q.center_right_coalition += parseFloat(Q.slv_r);
+////////////////////////////
+///===RIGHT COALITION===///
+////////////////////////////
+Q.right_coalition = parseFloat(0);
+//Q.right_coalition += parseFloat(Q.z_r);
+Q.right_coalition += parseFloat(Q.dvp_r);
+Q.right_coalition += parseFloat(Q.dnvp_r);
+Q.right_coalition += parseFloat(Q.dhp_r);
+Q.right_coalition += parseFloat(Q.dbp_r);
+Q.right_coalition += parseFloat(Q.cnblp_r);
+Q.right_coalition += parseFloat(Q.wp_r);
+Q.right_coalition += parseFloat(Q.vrp_r);
+Q.right_coalition += parseFloat(Q.rlb_r);
+Q.right_coalition += parseFloat(Q.slv_r);
+////////////////////////////////
+///===FAR-RIGHT COALITION===///
+////////////////////////////////
+Q.far_right_coalition = parseFloat(0);
+Q.far_right_coalition += parseFloat(Q.dnvp_r);
+Q.far_right_coalition += parseFloat(Q.nsdap_r);
+////////////////////////////
+///===LEFT COALITION===///
+////////////////////////////
+Q.left_coalition = parseFloat(0);
+Q.left_coalition += parseFloat(Q.spd_r);
+Q.left_coalition += parseFloat(Q.kpd_r);
+Q.left_coalition += parseFloat(Q.sapd_r);
+/////////////////////////////////
+///===POPULAR FRONT COALITION===///
+/////////////////////////////////
+Q.popular_front_coalition = parseFloat(-3); // Accounts for lack of BVP
+Q.popular_front_coalition += parseFloat(Q.spd_r);
+Q.popular_front_coalition += parseFloat(Q.kpd_r);
+//Q.popular_front_coalition += parseFloat(Q.z_r);
+Q.popular_front_coalition += parseFloat(Q.ddp_r);
+Q.popular_front_coalition += parseFloat(Q.sapd_r);
+////////////////////////////////////
+///===ANTI-DEMOCRATIC COALITION===///
+////////////////////////////////////
+Q.anti_democratic_coalition = parseFloat(0);
+Q.anti_democratic_coalition += parseFloat(Q.kpd_r);
+Q.anti_democratic_coalition += parseFloat(Q.nsdap_r);
+Q.anti_democratic_coalition += parseFloat(Q.dnvp_r);
+/////////////////////////////////
+///===NEO-WEIMAR COALITION===///
+/////////////////////////////////
+Q.neo_weimar_coalition = parseFloat(0);
+Q.neo_weimar_coalition += parseFloat(Q.spd_r);
+Q.neo_weimar_coalition += parseFloat(Q.ddp_r);
+//Q.neo_weimar_coalition += parseFloat(Q.z_r);
+Q.neo_weimar_coalition += parseFloat(Q.dvp_r);
+Q.neo_weimar_coalition += parseFloat(Q.dhp_r);
+Q.neo_weimar_coalition += parseFloat(Q.dbp_r);
+Q.neo_weimar_coalition += parseFloat(Q.cnblp_r);
+Q.neo_weimar_coalition += parseFloat(Q.wp_r);
+Q.neo_weimar_coalition += parseFloat(Q.vrp_r);
+Q.neo_weimar_coalition += parseFloat(Q.rlb_r);
+Q.neo_weimar_coalition += parseFloat(Q.slv_r);
+///////////////////////////////////
+///===HITLER-RIGHT COALITION===///
+///////////////////////////////////
+Q.hitler_right_coalition = parseFloat(0);
+//Q.hitler_right_coalition += parseFloat(Q.z_r);
+Q.hitler_right_coalition += parseFloat(Q.dnvp_r);
+Q.hitler_right_coalition += parseFloat(Q.nsdap_r);
+///////////////////////////////////
+///===PROGRESSIVE COALITION===///
+///////////////////////////////////
+Q.progressive_coalition = parseFloat(0);
+Q.progressive_coalition += parseFloat(Q.spd_r);
+Q.progressive_coalition += parseFloat(Q.kpd_r);
+Q.progressive_coalition += parseFloat(Q.ddp_r);
+Q.progressive_coalition += parseFloat(Q.sapd_r);
 
 Q.leverage = Q.spd_r;
 
@@ -168,7 +276,9 @@ Q.reichswehr_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 
-Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_minus_bvp_r = parseFloat(0);
+Q.z_minus_bvp_r -= parseFloat(Q.z_r); 
+Q.z_minus_bvp_r -= parseFloat(3);
 
 // understanding the enemy
 if (Q.nsdap_r >= 15) {
@@ -231,12 +341,6 @@ data = data.concat([
         "seats": Math.round(Q.dvp_r*5),
     },
     {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*5),
-    },
-    {
         "id": "dnvp",
         "legend": "DNVP",
         "name": "DNVP",
@@ -247,6 +351,48 @@ data = data.concat([
         "legend": "NSDAP",
         "name": "NSDAP",
         "seats": Math.round(Q.nsdap_r*5),
+    },
+    {
+        "id": "dbp",
+        "legend": "DBP",
+        "name": "DBP",
+        "seats": Math.round(Q.dbp_r*5),
+    },
+    {
+        "id": "cnblp",
+        "legend": "CNBLP",
+        "name": "CNBLP",
+        "seats": Math.round(Q.cnblp_r*5),
+    },
+    {
+        "id": "rlb",
+        "legend": "RLB",
+        "name": "RLB",
+        "seats": Math.round(Q.rlb_r*5),
+    },
+    {
+        "id": "slv",
+        "legend": "SLV",
+        "name": "SLV",
+        "seats": Math.round(Q.slv_r*5),
+    },
+    {
+        "id": "dhp",
+        "legend": "DHP",
+        "name": "DHP",
+        "seats": Math.round(Q.dhp_r*5),
+    },
+    {
+        "id": "vrp",
+        "legend": "VRP",
+        "name": "VRP",
+        "seats": Math.round(Q.vrp_r*5),
+    },
+    {
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_r*5),
     },
 ]);
 
@@ -289,7 +435,19 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#097100'> </div> !} DBP: {!</td><td>!} [+ dbp_r +] % {!</td><td>!} [+ str_change_dbp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#7FCEB1'> </div> !} CNBLP: {!</td><td>!} [+ cnblp_r +] % {!</td><td>!} [+ str_change_cnblp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#598856'> </div> !} RLB: {!</td><td>!} [+ rlb_r +] % {!</td><td>!} [+ str_change_rlb +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#0a8e0a'> </div> !} SLV: {!</td><td>!} [+ slv_r +] % {!</td><td>!} [+ str_change_slv +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#79b175'> </div> !} DHP: {!</td><td>!} [+ dhp_r +] % {!</td><td>!} [+ str_change_dhp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#0076ea'> </div> !} VRP: {!</td><td>!} [+ vrp_r +] % {!</td><td>!} [+ str_change_vrp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_r +] % {!</td><td>!} [+ str_change_wp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3f7bc1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
 
@@ -302,9 +460,9 @@ Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ weimar_coalition +]%
 
 Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ grand_coalition +]%
 
-Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP + Others): [+ bourgeois_coalition +]%
+Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP): [+ bourgeois_coalition +]%
 
-Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
+Right-wing Coalition (Z + BVP + DVP + DNVP): [+ right_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
@@ -316,6 +474,8 @@ There are some potential coalition arrangements.
 
 - @spd_majority
 - @weimar_coalition
+- @weimar_coalition_dhp_tol
+- @weimar_coalition_dhp_in
 - @grand_coalition
 - @new_grand_coalition
 - @unity_government
@@ -325,9 +485,51 @@ There are some potential coalition arrangements.
 - @left_coalition
 - @popular_front_coalition
 - @right_coalition
+- @secret_minority
+
+@secret_minority
+title: Super Secret minority coalition
+subtitle: SPD (100%)
+on-arrival: chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; in_spd_majority = 1; pro_republic += 5; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"; interior_minister_party = "SPD"; interior_minister = "Severing"; justice_minister_party = "SPD"; justice_minister = "Radbruch"; labor_minister_party = "SPD"; labor_minister = "Wissell"; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; economic_minister_party = "SPD"; economic_minister = "Schmidt"; finance_minister_party = "SPD"; finance_minister = "Hilferding"; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"; reichswehr_loyalty -= 0.05; 
+go-to: braun_majority_chancellor
 
 # TODO: black-brown coalition
 
+@weimar_coalition_dhp_tol
+title: We can form a Weimar Coalition.
+subtitle: SPD + Z + [+ ddp_name +] [? if sapd_formed and kpd_relation >= 30 : + SAPD toleration ?] + DHP toleration ([+ weimar_coalition +]%)
+view-if: weimar_coalition <= 50 and weimar_coalition_dhp >= 50 and weimar_dhp_tolerated <= 2 and dhp_relation >= 65
+on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; ddp_in_government = 1; weimar_dhp_tolerated += 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+achievement: weimar_coalition
+
+We have enough votes to form a "Weimar Coalition" government consisting of the SPD, Center (Z) and Democratic ([+ ddp_name +]) parties! This has been our preferred governing coalition since 1919, though the DHP must tolerate us to ensure a majority.
+
+Who should be the chancellor?
+
+- @muller
+- @braun
+- @breitscheid_coalition_chancellor
+- @wels
+- @z_chancellor
+- @z_chancellor_wirth
+
+@weimar_coalition_dhp_in
+title: We can form a Weimar Coalition with the DHP.
+subtitle: SPD + Z + [+ ddp_name +] + DHP [? if sapd_formed and kpd_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
+view-if: weimar_coalition <= 50 and weimar_coalition_dhp >= 50 and weimar_dhp_tolerated > 2 and dhp_relation >= 65
+on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; z_in_government = 1; ddp_in_government = 1; dhp_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+achievement: weimar_coalition
+
+We have enough votes to form a "Weimar Coalition" government consisting of the SPD, Center (Z) and Democratic ([+ ddp_name +]) parties! This has been our preferred governing coalition since 1919, however the DHP joins us, as they are tired of toleration.
+
+Who should be the chancellor?
+
+- @muller
+- @braun
+- @breitscheid_coalition_chancellor
+- @wels
+- @z_chancellor
+- @z_chancellor_wirth
 
 @popular_front_coalition
 title: A new "Popular Front" coalition?
@@ -1252,7 +1454,7 @@ tags: mins_1928
 choose-if: leverage >= 5
 view-if: labor_minister_party != "SPD"
 on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
-go-to: ministries
+go-to: ministries_b
 
 Rudolf Wissell of the SPD has been appointed labor minister.
 
@@ -1264,7 +1466,7 @@ tags: mins_1928
 choose-if: leverage >= 5
 view-if: interior_minister_party != "SPD"
 on-arrival: leverage -= 5; interior_minister_party = "SPD"; interior_minister = "Severing"
-go-to: ministries
+go-to: ministries_b
 
 Carl Severing of the SPD has been appointed Interior Minister.
 
@@ -1276,7 +1478,7 @@ tags: mins_1928
 choose-if: leverage >= 10 
 view-if: finance_minister_party != "SPD"
 on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
-go-to: ministries
+go-to: ministries_b
 
 Rudolf Hilferding of the SPD has been appointed Finance Minister.
 
@@ -1288,7 +1490,7 @@ tags: mins_1928
 choose-if: leverage >= 10 
 view-if: economic_minister_party != "SPD"
 on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
-go-to: ministries
+go-to: ministries_b
 
 Robert Schmidt of the SPD has been appointed Economic Minister.
 
@@ -1300,7 +1502,7 @@ tags: mins_1928
 choose-if: leverage >= 10 
 view-if: justice_minister_party != "SPD"
 on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
-go-to: ministries
+go-to: ministries_b
 
 Gustav Radbruch of the SPD has been appointed Justice Minister.
 
@@ -1312,7 +1514,7 @@ tags: mins_1928
 choose-if: leverage >= 10 
 view-if: foreign_minister_party != "SPD"
 on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
-go-to: ministries
+go-to: ministries_b
 
 Rudolf Breitscheid of the SPD has been appointed Foreign Minister.
 
@@ -1325,7 +1527,7 @@ choose-if: leverage >= 10
 view-if: agriculture_minister_party != "SPD"
 on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
 go-to: ministries
-tags: mins_1928
+tags: mins_1928_b
 
 Fritz Baade of the SPD has been appointed Agriculture Minister.
 
@@ -1346,7 +1548,7 @@ Julius Leber of the SPD has been appointed Reichswehr Minister.
 @no_more
 title: No more ministries.
 subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?]
-tags: mins_1928
+tags: mins_1928_b
 
 This coalition arrangement is tolerable to all.
 
@@ -1354,54 +1556,54 @@ This coalition arrangement is tolerable to all.
 title: Drop the Labor Ministry.
 view-if: labor_minister_party = "SPD"
 on-arrival: labor_minister_party = "Z"; labor_minister = "Stegerwald"; leverage += 5;
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
 
 @drop_interior
 title: Drop the Interior Ministry.
 view-if: interior_minister_party = "SPD"
 on-arrival: interior_minister_party = "Z"; interior_minister = "Wirth"; leverage += 5;
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
 
 @drop_finance
 title: Drop the Finance Ministry.
 view-if: finance_minister_party = "SPD"
 on-arrival: finance_minister_party = "DVP"; finance_minister = "Moldenhauer"; leverage += 10; finance_minister_party = "Z" if in_weimar_coalition or in_popular_front; finance_minister = "Köhler" if in_weimar_coalition or in_popular_front
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
 
 @drop_economic
 title: Drop the Economic Ministry.
 view-if: economic_minister_party = "SPD"
 on-arrival: economic_minister_party = "DVP"; economic_minister = "Curtius"; leverage += 10; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front;
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
 
 @drop_justice
 title: Drop the Justice Ministry.
 view-if: justice_minister_party = "SPD"
 on-arrival: justice_minister_party = ddp_name; justice_minister = "Koch-Weser"; leverage += 10;
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
 
 @drop_foreign
 title: Drop the Foreign Ministry.
 view-if: foreign_minister_party = "SPD"
 on-arrival: foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; leverage += 10; foreign_minister_party = "Z" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
 
 @drop_agriculture
 title: Drop the Agriculture Ministry.
 view-if: agriculture_minister_party = "SPD"
 on-arrival: agriculture_minister_party = ddp_name; agriculture_minister = "Dietrich"; leverage += 10; agriculture_minister_party = "Z" if in_weimar_coalition; agriculture_minister = "Hermes" if in_weimar_coalition
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
 
 @drop_reichswehr
 title: Drop the Reichswehr Ministry.
 view-if: reichswehr_minister_party = "SPD"
 on-arrival: reichswehr_minister_party = "I"; reichswehr_minister = "Groener"; leverage += 15;
-tags: drop_mins_1928
+tags: drop_mins_1928_b
 go-to: ministries
