@@ -103,7 +103,7 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
     Q.largest_party = 'KPD';
 }
 
-javascript// coalitions
+// coalitions
 ////////////////////////////
 ///===WEIMAR COALITION===///
 ////////////////////////////
@@ -393,7 +393,7 @@ data = data.concat([
         "legend": "WP",
         "name": "WP",
         "seats": Math.round(Q.wp_r*5),
-    },
+    }
 ]);
 
 if (window && d3) {
