@@ -51,3 +51,5 @@ title: Government Affairs
 view-if: time >= 6
 card-image: img/reichstag_2.jpg
 is-deck: true
+
+ - #govt_affairs
