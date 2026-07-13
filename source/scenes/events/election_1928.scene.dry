@@ -98,25 +98,31 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
 }
 
 // coalitions
-Q.weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1);
-Q.grand_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1);
-Q.bourgeois_coalition = (Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1);
-Q.center_right_coalition = (Q.z_r + Q.ddp_r + Q.dvp_r + Q.dnvp_r).toFixed(1);
-Q.right_coalition = (Q.z_r + Q.dvp_r + Q.dnvp_r).toFixed(1);
-Q.far_right_coalition = (Q.dnvp_r + Q.nsdap_r).toFixed(1);
-Q.left_coalition = (Q.spd_r + Q.kpd_r + Q.sapd_r).toFixed(1);
+Q.weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(2);
+Q.weimar_coalition_dhp = (Q.spd_r + Q.ddp_r + Q.dhp_r + Q.z_r - 3).toFixed(2);
+Q.grand_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(2);
+Q.bourgeois_coalition = (Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(2);
+Q.center_right_coalition = (Q.z_r + Q.ddp_r + Q.dvp_r + Q.dnvp_r).toFixed(2);
+Q.right_coalition = (Q.z_r + Q.dvp_r + Q.dnvp_r).toFixed(2);
+Q.far_right_coalition = (Q.dnvp_r + Q.nsdap_r).toFixed(2);
+Q.left_coalition = (Q.spd_r + Q.kpd_r + Q.sapd_r).toFixed(2);
 // this is an absurd concept lol
-Q.popular_front_coalition = (Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r).toFixed(1);
-Q.anti_democratic_coalition = (Q.kpd_r + Q.nsdap_r + Q.dnvp_r).toFixed(1);
+Q.popular_front_coalition = (Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r).toFixed(2);
+Q.anti_democratic_coalition = (Q.kpd_r + Q.nsdap_r + Q.dnvp_r).toFixed(2);
 // aka everyone except nazi, kpd, dnvp
-Q.neo_weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1);
+Q.neo_weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(2);
 // Hitler + Right-wing parties (only comes into effect if you've alienated Z too badly)
-Q.hitler_right_coalition = (Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(1);
+Q.hitler_right_coalition = (Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(2);
 // Progressive coalition isn't going to be implemented as a distinct coalition but it's the coalition that lets you pass improved women's rights/gay rights
-Q.progressive_coalition = (Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1);
+Q.progressive_coalition = (Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(2);
+Q.weimar_coalition_dhp_visible = 1
 
 if (Q.kpd_relation >= 30) {
     Q.weimar_coalition += Q.sapd_r;
+}
+
+if (Q.weimar_coalition < 50) {
+    Q.weimar_coalition_dhp_visible = 1
 }
 
 Q.leverage = Q.spd_r;
@@ -347,7 +353,9 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-Weimar Coalition (SPD + Z + [+ ddp_name +]): [+ weimar_coalition +]%
+[? if not weimar_coalition_dhp_visible : Weimar Coalition (SPD + Z + [+ ddp_name +] + [? if kpd_relation >= 30 : SAPD Toleration ?]): [+ weimar_coalition +]% ?]
+
+[? if weimar_coalition_dhp_visible : Weimar Coalition (SPD + Z + [+ ddp_name +] + DHP toleration + [? if kpd_relation >= 30 : SAPD Toleration ?]): [+ weimar_coalition_dhp +]% ?]
 
 Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ grand_coalition +]%
 

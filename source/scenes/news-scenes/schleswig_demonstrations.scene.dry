@@ -23,8 +23,8 @@ The ongoing Agricultural Crisis that forced peasants to take out disadvantageous
 - @return:
 
 @price_floors
-on-arrival: sch_hol_demo_seen = 1; rural_spd += 2; workers_spd -= 1; schleswig_farmers_option1_seen = 1; agr_cc += 1; ssbb_formed = 1; resource -= 0.5
-choose-if: sch_hol_demo_seen = 0 or resources < 0.5
+on-arrival: sch_hol_demo_seen = 1; rural_spd += 2; workers_spd -= 1; schleswig_farmers_option1_seen = 1; agr_cc += 1; ssbb_formed = 1; resources -= 0.5
+choose-if: sch_hol_demo_seen = 0 or resources > 0.5
 subtitle: -0.5 resources
 unavailable-subtitle: [? if sch_hol_demo_seen != 0 : We have already decided on an action ?][? if resources < 0.5 : Not enough resources ?]
 

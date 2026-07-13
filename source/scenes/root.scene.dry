@@ -36,7 +36,7 @@ Q.old_demographics = 0;
 Q.use_decimals = 0;
 
 // party resources
-Q.resources = 1.5;
+Q.resources = 2;
 // party dues
 Q.dues = 2;
 
