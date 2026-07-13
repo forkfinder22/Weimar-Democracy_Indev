@@ -17,6 +17,7 @@ While agricultural policy has historically not been the domain of the SPD, there
 - @state_buyer
 - @price_controls
 - @price_floors
+- @agr_coop
 - @root: Do not enact any policies for now.
 - @easy_discard
 - @cancel_advisor_action
@@ -64,7 +65,12 @@ title: Institute price controls on agricultural goods
 worker happy, rural sad, agr_cc down, blah blah
 
 @price_floors
-title: Institute prixe floors on agricultural goods
+title: Institute price floors on agricultural goods
 on-arrival: agr_cc += 1
 
 rural happy worker sad agrcc up, etc. I'll actually have to provide a good economic thing but in the mean have some agr_cc
+
+@agr_coop
+title: Support Agricultural Cooperatives
+
+Agricultural Cooperatives. This option does nothing
