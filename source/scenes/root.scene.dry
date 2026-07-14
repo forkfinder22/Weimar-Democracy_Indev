@@ -729,6 +729,21 @@ Q.east_relation = 0;
 // Foreign events
 soviet_collapse = 0; // Has the Soviet Union collapsed?
 
+/// ALSACE LORRAINE ///
+/// ALSACE LORRAINE ///
+Q.alslor_unlock_prog = 0;
+Q.alslor_unlock = 0;
+Q.ger_in_alslor = 20; // Rough estimate
+Q.alslor_strife = 1; // don't know why I called it strife, but how publicly do the residents of AlsLor support german reunification? i.e. Are there pro-german rallies, is the movement mostly underground, or somewhere inbetween?
+/// ALSACE LORRAINE ///
+/// ALSACE LORRAINE ///
+/// country specific vars //
+/// FRANCE ///
+Q.fra_right_gov = 1; // Are any of the centre to right-wing parties in gov?
+Q.fra_budget = 3; // How much budget does the french gov have?
+Q.fra_right = 65.22; // How much of the french parliament is made up of: AD, FR/URD, Miscellaneous Right, RI, PRRRS (if in right coalition)
+Q.fra_left = 34.78; // How much of the french parliament is made up of: SFIO, PRRRS (if not in right coalition), Miscellaneous Left, PCF, PRS
+
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller

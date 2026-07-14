@@ -2,7 +2,177 @@ title: Foreign Policy
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-on-arrival: month_actions += 1; foreign_policy_timer += 8
+on-arrival: {!
+Q.month_actions += 1; 
+Q.foreign_policy_timer += 6;
+Q.alslor_unlock_prog = 0;
+Q.alslor_unlock = 0;
+if (Q.fra_relation >= 3 && Q.fra_tension <= 50) {
+    if (Q.diplomatic_leverage >= 20) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.ger_in_alslor >= 75) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.budget >= 7) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_strife >= 15) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (!Q.fra_right_gov) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_right <= 10) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_budget < 0) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_unlock_prog = 9) {
+        Q.alslor_unlock = 1;
+    }
+    Q.alslor_unlock_prog = 0;
+}
+if (Q.fra_relation >= 4 && Q.fra_tension <= 45) {
+    if (Q.diplomatic_leverage >= 18) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.ger_in_alslor >= 70) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.budget >= 7) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_strife >= 14) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (!Q.fra_right_gov) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_right <= 12) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_budget < 0) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_unlock_prog = 9) {
+        Q.alslor_unlock = 2;
+    }
+    Q.alslor_unlock_prog = 0;
+}
+if (Q.fra_relation >= 5 && Q.fra_tension <= 40) {
+    if (Q.diplomatic_leverage >= 16) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.ger_in_alslor >= 65) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.budget >= 7) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_strife >= 13) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (!Q.fra_right_gov) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_right <= 14) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_budget < 0) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_unlock_prog = 9) {
+        Q.alslor_unlock = 3;
+    }
+    Q.alslor_unlock_prog = 0;
+}
+if (Q.fra_relation >= 6 && Q.fra_tension <= 35) {
+    if (Q.diplomatic_leverage >= 14) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.ger_in_alslor >= 60) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.budget >= 6) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_strife >= 12) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (!Q.fra_right_gov) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_right <= 16) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_budget <= 0) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_unlock_prog = 9) {
+        Q.alslor_unlock = 4;
+    }
+    Q.alslor_unlock_prog = 0;
+}
+if (Q.fra_relation >= 7 && Q.fra_tension <= 30) {
+    if (Q.diplomatic_leverage >= 12) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.ger_in_alslor >= 55) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.budget >= 6) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_strife >= 10) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (!Q.fra_right_gov) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_right <= 20) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.fra_budget <= 0) {
+        Q.alslor_unlock_prog += 1;
+    }
+    if (Q.alslor_unlock_prog = 9) {
+        Q.alslor_unlock = 5;
+    }
+    Q.alslor_unlock_prog = 0;
+}
+!}
 view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
 card-image: img/portraits/BreitscheidRudolf.jpg
 go-to: fp_menu
@@ -171,8 +341,6 @@ wip
 choose-if: young_plan_seen = 1
 unavailable-subtitle: The Rhineland needs to have been evacuated by french troops first
 
-Alsace, Northern Schleswig, Danzig, Colonies, Memel, Pozan, Gdynia, Katowice, Eupen, Malmedy, Hultschin District
-
 - @alsace: Negotiate for the Alsace-Lorraine
 - @norsch: Negotiate for North Schleswig
 - @danzig: Negotiate for Danzig
@@ -182,7 +350,7 @@ Alsace, Northern Schleswig, Danzig, Colonies, Memel, Pozan, Gdynia, Katowice, Eu
 - @gdynia: Negotiate for the Polish Corridor
 - @katowice: Negotiate for Katowice
 - @eupmal: Negotiate for Eupen-Malmedy
-- @hultschin: Negotiate for Hultschin
+- @hultschin: Negotiate for the Hultschin District
 - @backtov
 
 @alsace
@@ -286,27 +454,43 @@ Diplomatic Leverage: [+ diplomatic_leverage +]
 - @hultschin5
 
 @alslor1
-title: wip
+title: Attempt to buy the Alsace Lorraine from France
+subtitle: -7 budget
+choose-if: alslor_unlock = 1
+view-if: alslor_unlock <= 1
+unavailable-subtitle: France wouldn't agree to this.
 
 wip
 
 @alslor2
-title: wip
+title: Attempt to buy the Alsace Lorraine from France
+subtitle: -7 budget
+view-if: alslor_unlock = 2
+unavailable-subtitle: France wouldn't agree to this. 
 
 wip
 
 @alslor3
-title: wip
+title: Attempt to buy the Alsace Lorraine from France
+subtitle: -7 budget
+view-if: alslor_unlock <= 3 
+unavailable-subtitle: France wouldn't agree to this. 
 
 wip
 
 @alslor4
-title: wip
+title: Attempt to buy the Alsace Lorraine from France
+subtitle: -6 budget
+view-if: alslor_unlock <= 4 
+unavailable-subtitle: France wouldn't agree to this. 
 
 wip
 
 @alslor5
-title: wip
+title: Attempt to buy the Alsace Lorraine from France
+subtitle: -6 budget
+view-if: alslor_unlock <= 5 
+unavailable-subtitle: France wouldn't agree to this. 
 
 wip
 
@@ -607,7 +791,7 @@ We also aim to improve relations with our eastern neighbors, like Poland, who ar
 
 @improve_cze
 title: Improve our relations with Czechoslovakia
-on-arrival: cze_relation += 1;
+on-arrival: cze_relation += 2;
 
 We have a more difficult time improving relations with Czechoslovakia, due to the unrest in the Sudetenland region, but nevertheless, we must try
 
@@ -673,38 +857,38 @@ title: Improve relations with our Southern neighbors
 - @genimpr
 
 @improve_lic
-title: Improve our relations with WIP
-on-arrival: lic_tension += 2;
+title: Improve our relations with Liechtenstein
+on-arrival: lic_relation += 2;
 
 WIP
 
 @improve_sanmar
-title: Improve our relations with WIP
-on-arrival: san_mar_tension += 2;
+title: Improve our relations with San Marino
+on-arrival: san_mar_relation += 2;
 
 WIP
 
 @improve_vat
-title: Improve our relations with WIP
-on-arrival: vat_tension += 2;
+title: Improve our relations with the Vatican
+on-arrival: vat_relation += 2;
 
 WIP
 
 @improve_ita
-title: Improve our relations with WIP
-on-arrival: ita_tension += 2;
+title: Improve our relations with Italy
+on-arrival: ita_relation += 2;
 
 WIP
 
 @improve_swi
-title: Improve our relations with WIP
-on-arrival: swi_tension += 2;
+title: Improve our relations with Switzerland
+on-arrival: swi_relation += 2;
 
 WIP
 
 @improve_aus
-title: Improve our relations with WIP
-on-arrival: aus_tension += 2;
+title: Improve our relations with Austria
+on-arrival: aus_relation += 2;
 
 WIP
 
@@ -720,43 +904,43 @@ title: Improve relations with our Northern neighbours
 - @genimpr
 
 @improve_nor
-title: Improve our relations with WIP
-on-arrival: nor_tension += 2;
+title: Improve our relations with Norway
+on-arrival: nor_relation += 2;
 
 WIP
 
 @improve_swe
-title: Improve our relations with WIP
-on-arrival: swe_tension += 2;
+title: Improve our relations with Sweden
+on-arrival: swe_relation += 2;
 
 WIP
 
 @improve_fin
-title: Improve our relations with WIP
-on-arrival: fin_tension += 2;
+title: Improve our relations with Finland
+on-arrival: fin_relation += 2;
 
 WIP
 
 @improve_den
-title: Improve our relations with WIP
-on-arrival: den_tension += 2;
+title: Improve our relations with Denmark
+on-arrival: den_relation += 2;
 
 WIP
 
 @improve_ice
-title: Improve our relations with WIP
-on-arrival: ice_tension += 2;
+title: Improve our relations with Iceland
+on-arrival: ice_relation += 2;
 
 WIP
 
 @improve_ire
-title: Improve our relations with WIP
-on-arrival: ire_tension += 2;
+title: Improve our relations with Ireland
+on-arrival: ire_relation += 2;
 
 WIP
 
 @improve_low
-title: Improve relations with the Benelx countries
+title: Improve relations with the Benelux countries
 
 - @improve_net
 - @improve_bel
@@ -764,20 +948,20 @@ title: Improve relations with the Benelx countries
 - @genimpr
 
 @improve_net
-title: Improve our relations with WIP
-on-arrival: net_tension += 2;
+title: Improve our relations with Netherlands
+on-arrival: net_relation += 2;
 
 WIP
 
 @improve_bel
-title: Improve our relations with WIP
-on-arrival: bel_tension += 2;
+title: Improve our relations with Belgium
+on-arrival: bel_relation += 2;
 
 WIP
 
 @improve_lux
-title: Improve our relations with WIP
-on-arrival: lux_tension += 2;
+title: Improve our relations with Luxembourg
+on-arrival: lux_relation += 2;
 
 WIP
 
@@ -790,19 +974,19 @@ title: Improve relations with the Iberian countries
 - @genimpr
 
 @improve_por
-title: Improve our relations with WIP
-on-arrival: por_tension += 2;
+title: Improve our relations with Portugal
+on-arrival: por_relation += 2;
 
 WIP
 
 @improve_spa
-title: Improve our relations with WIP
-on-arrival: spa_tension += 2;
+title: Improve our relations with Spain
+on-arrival: spa_relation += 2;
 
 WIP
 
 @improve_and
-title: Improve our relations with WIP
+title: Improve our relations with Andorra
 
 wip
 
@@ -818,38 +1002,38 @@ title: Improve relations with the Balkan countries
 - @genimpr
 
 @improve_yug
-title: Improve our relations with WIP
-on-arrival: yug_tension += 2;
+title: Improve our relations with Yugoslavia
+on-arrival: yug_relation += 2;
 
 WIP
 
 @improve_bul
-title: Improve our relations with WIP
-on-arrival: bul_tension += 2;
+title: Improve our relations with Bulgaria
+on-arrival: bul_relation += 2;
 
 WIP
 
 @improve_hun
-title: Improve our relations with WIP
-on-arrival: hun_tension += 2;
+title: Improve our relations with Hungary
+on-arrival: hun_relation += 2;
 
 WIP
 
 @improve_alb
-title: Improve our relations with WIP
-on-arrival: alb_tension += 2;
+title: Improve our relations with Albania
+on-arrival: alb_relation += 2;
 
 WIP
 
 @improve_rom
-title: Improve our relations with WIP
-on-arrival: rom_tension += 2;
+title: Improve our relations with Romania
+on-arrival: rom_relation += 2;
 
 WIP
 
 @improve_gre
-title: Improve our relations with WIP
-on-arrival: gre_tension += 2;
+title: Improve our relations with Greece
+on-arrival: gre_relation += 2;
 
 WIP
 
@@ -862,20 +1046,20 @@ title: Improve relations with the Baltic countries
 - @genimpr
 
 @improve_lit
-title: Improve our relations with WIP
-on-arrival: lit_tension += 2;
+title: Improve our relations with Lithuania
+on-arrival: lit_relation += 2;
 
 WIP
 
 @improve_lat
-title: Improve our relations with WIP
-on-arrival: lat_tension += 2;
+title: Improve our relations with Latvia
+on-arrival: lat_relation += 2;
 
 WIP
 
 @improve_est
-title: Improve our relations with WIP
-on-arrival: est_tension += 2;
+title: Improve our relations with Estonia
+on-arrival: est_relation += 2;
 
 WIP
 
@@ -886,8 +1070,8 @@ title: Improve relations with the other countries of Europe
 - @genimpr
 
 @improve_mon
-title: Improve our relations with WIP
-on-arrival: mon_tension += 2;
+title: Improve our relations with Monaco
+on-arrival: mon_relation += 2;
 
 WIP
 
