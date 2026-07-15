@@ -5,6 +5,9 @@ tags: govt_affairs, cabinet
 on-arrival: {!
 Q.month_actions += 1; 
 Q.foreign_policy_timer += 6;
+
+/// ALSACE LORRAINE ///
+/// ALSACE LORRAINE ///
 Q.alslor_unlock_prog = 0;
 Q.alslor_unlock = 0;
 if (Q.fra_relation >= 3 && Q.fra_tension <= 50) {
@@ -171,6 +174,160 @@ if (Q.fra_relation >= 7 && Q.fra_tension <= 30) {
         Q.alslor_unlock = 5;
     }
     Q.alslor_unlock_prog = 0;
+}
+/// ALSACE LORRAINE END ///
+/// ALSACE LORRAINE END ///
+/// NORTHERN SCHLESWIG ///
+/// NORTHERN SCHLESWIG ///
+if (Q.den_relation >= 3 && Q.den_tension <= 50) {
+    if (Q.diplomatic_leverage >= 10) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.ger_in_norsch >= 70) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.alslor_annexed) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.budget >= 4) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_strife >= 8) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.den_budget < 2) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_unlock_prog = 9) {
+        Q.norsch_unlock = 1;
+    }
+    Q.norsch_unlock_prog = 0;
+}
+if (Q.den_relation >= 4 && Q.den_tension <= 45) {
+    if (Q.diplomatic_leverage >= 9) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.ger_in_norsch >= 67) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.alslor_annexed) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.budget >= 4) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_strife >= 7) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.den_budget < 2) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_unlock_prog = 8) {
+        Q.norsch_unlock = 2;
+    }
+    Q.norsch_unlock_prog = 0;
+}
+if (Q.den_relation >= 5 && Q.den_tension <= 40) {
+    if (Q.diplomatic_leverage >= 8) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.ger_in_norsch >= 65) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.alslor_annexed) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.budget >= 3) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_strife >= 6) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.den_budget < 2) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_unlock_prog = 8) {
+        Q.norsch_unlock = 3;
+    }
+    Q.norsch_unlock_prog = 0;
+}
+if (Q.den_relation >= 6 && Q.den_tension <= 35) {
+    if (Q.diplomatic_leverage >= 7) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.ger_in_norsch >= 62) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.alslor_annexed) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.budget >= 3) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_strife >= 5) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.den_budget < 2) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_unlock_prog = 7) {
+        Q.norsch_unlock = 4;
+    }
+    Q.norsch_unlock_prog = 0;
+}
+if (Q.den_relation >= 7 && Q.den_tension <= 30) {
+    if (Q.diplomatic_leverage >= 7) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.ger_in_norsch >= 60) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.eu) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.saar_rejoin) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.alslor_annexed) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.budget >= 3) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_strife >= 5) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.den_budget < 2) {
+        Q.norsch_unlock_prog += 1;
+    }
+    if (Q.norsch_unlock_prog = 6) {
+        Q.norsch_unlock = 5;
+    }
+    Q.norsch_unlock_prog = 0;
 }
 !}
 view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
@@ -461,6 +618,7 @@ subtitle: -7 budget
 choose-if: alslor_unlock = 1
 view-if: alslor_unlock <= 1
 unavailable-subtitle: France wouldn't agree to this.
+on-arrival: alslor_annexed = 1
 
 wip
 
@@ -468,7 +626,8 @@ wip
 title: Attempt to buy the Alsace Lorraine from France
 subtitle: -7 budget
 view-if: alslor_unlock = 2
-unavailable-subtitle: France wouldn't agree to this. 
+unavailable-subtitle: France wouldn't agree to this.
+on-arrival: alslor_annexed = 1 
 
 wip
 
@@ -476,7 +635,8 @@ wip
 title: Attempt to buy the Alsace Lorraine from France
 subtitle: -7 budget
 view-if: alslor_unlock <= 3 
-unavailable-subtitle: France wouldn't agree to this. 
+unavailable-subtitle: France wouldn't agree to this.
+on-arrival: alslor_annexed = 1 
 
 wip
 
@@ -485,6 +645,7 @@ title: Attempt to buy the Alsace Lorraine from France
 subtitle: -6 budget
 view-if: alslor_unlock <= 4 
 unavailable-subtitle: France wouldn't agree to this. 
+on-arrival: alslor_annexed = 1
 
 wip
 
@@ -493,6 +654,8 @@ title: Attempt to buy the Alsace Lorraine from France
 subtitle: -6 budget
 view-if: alslor_unlock <= 5 
 unavailable-subtitle: France wouldn't agree to this. 
+on-arrival: alslor_annexed = 1
+### add more the on arrival
 
 wip
 
@@ -512,27 +675,52 @@ on-arrival: budget -= 0.5; nationalism += 0.5; ger_in_alslor += 2; fra_tension +
 We have provide monetary bonuses for German men and women to settle in Alsace-Lorraine, helping germanise the region.
 
 @norsch1
-title: wip
+title: Attempt to buy North Schleswig from France
+subtitle: -4 budget
+choose-if: norsch_unlock = 1 and budget >= 4
+view-if: norsch_unlock <= 1
+unavailable-subtitle: Denmark wouldn't agree to this. [? if budget < 4 : First of all, we do not have enough enough budget ?]
+on-arrival: norsch_annexed = 1
 
 wip
 
 @norsch2
-title: wip
+title: Attempt to buy North Schleswig from France
+subtitle: -4 budget
+choose-if: norsch_unlock = 2 and budget >= 4
+view-if: norsch_unlock <= 1
+unavailable-subtitle: Denmark wouldn't agree to this. [? if budget < 4 : First of all, we do not have enough enough budget ?]
+on-arrival: norsch_annexed = 1
 
 wip
 
 @norsch3
-title: wip
+title: Attempt to buy North Schleswig from France
+subtitle: -4 budget
+choose-if: norsch_unlock = 3 and budget >= 3
+view-if: norsch_unlock <= 1
+unavailable-subtitle: Denmark wouldn't agree to this. [? if budget < 3 : First of all, we do not have enough enough budget ?]
+on-arrival: norsch_annexed = 1
 
 wip
 
 @norsch4
-title: wip
+title: Attempt to buy North Schleswig from France
+subtitle: -4 budget
+choose-if: norsch_unlock = 4 and budget >= 3
+view-if: norsch_unlock <= 1
+unavailable-subtitle: Denmark wouldn't agree to this. [? if budget < 3 : First of all, we do not have enough enough budget ?]
+on-arrival: norsch_annexed = 1
 
 wip
 
 @norsch5
-title: wip
+title: Attempt to buy North Schleswig from France
+subtitle: -4 budget
+choose-if: norsch_unlock = 5 and budget >= 3
+view-if: norsch_unlock <= 1
+unavailable-subtitle: Denmark wouldn't agree to this. [? if budget < 3 : First of all, we do not have enough enough budget ?]
+on-arrival: norsch_annexed = 1
 
 wip
 
