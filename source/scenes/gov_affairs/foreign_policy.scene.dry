@@ -329,7 +329,7 @@ Diplomatic Leverage: [+ diplomatic_leverage +]
 title: Increase the amount of leverage we have
 on-arrival: diplomatic_leverage += 1
 
-We have increased the amount of diplomatic leverage we have through various means.
+We have increased the amount of diplomatic leverage we have through various diplomatic means.
 
 @military
 choose-if: young_plan_seen = 1
@@ -362,6 +362,8 @@ Diplomatic Leverage: [+ diplomatic_leverage +]
 - @alslor3
 - @alslor4
 - @alslor5
+- @als_strife
+- @als_settle
 
 @norsch
 
@@ -493,6 +495,21 @@ view-if: alslor_unlock <= 5
 unavailable-subtitle: France wouldn't agree to this. 
 
 wip
+
+@als_strife
+title: Support vocally pro-german organisations in Alsace-Lorraine
+on-arrival: alslor_strife += 1; fra_tension += 3; alslor_rel_prog += 1; fra_relation -= 1 if alslor_rel_prog == 5; fra_tension += 2 if alslor_rel_prog == 5; alslor_rel_prog = 0 if alslor_rel_prog >= 5
+
+We have supported the <i>Heimatbund</i> in Alsace-Lorraine, who publicly advocate for the reunification of Alsace-Lorraine and Germany, despite repression by the French authorities, especially in events like the Colmar Trial
+
+@als_settle
+title: Send German settlers into the region of Alsace-Lorraine
+subtitle: -0.5 budget. A bit reminiscent of pre-war <i>Ostpolitik</i>...
+unavailable-subtitle: Not enough budget.
+choose-if: budget >= 0.5
+on-arrival: budget -= 0.5; nationalism += 0.5; ger_in_alslor += 2; fra_tension += 3; alslor_rel_prog += 1; fra_relation -= 1 if alslor_rel_prog == 5; fra_tension += 2 if alslor_rel_prog == 5; alslor_rel_prog = 0 if alslor_rel_prog >= 5
+
+We have provide monetary bonuses for German men and women to settle in Alsace-Lorraine, helping germanise the region.
 
 @norsch1
 title: wip
