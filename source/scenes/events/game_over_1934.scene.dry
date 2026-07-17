@@ -24,3 +24,10 @@ if (!Q.economic_plan) {
 !}
 
 - @game_over: Game over.
+- @continue: Continue past 1934 (Very little content)
+
+@continue
+
+Ok then...
+
+@root: Return to main 

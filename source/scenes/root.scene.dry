@@ -735,8 +735,23 @@ Q.alslor_unlock_prog = 0;
 Q.alslor_unlock = 0;
 Q.ger_in_alslor = 20; // Rough estimate
 Q.alslor_strife = 1; // don't know why I called it strife, but how publicly do the residents of AlsLor support german reunification? i.e. Are there pro-german rallies, is the movement mostly underground, or somewhere inbetween?
+Q.alslor_rel_prog = 0
 /// ALSACE LORRAINE ///
 /// ALSACE LORRAINE ///
+/// NORSCH ///
+/// NORSCH ///
+Q.norsch_unlock_prog = 0;
+Q.norsch_unlock = 0;
+Q.ger_in_norsch = 30;
+Q.norsch_strife = 2;
+Q.norsch_rel_prog = 0;
+/// NORSCH ///
+/// NORSCH ///
+/// SAAR REF ///
+/// SAAR REF ///
+Q.saar_time = 84;
+/// SAAR REF ///
+/// SAAR REF ///
 /// country specific vars //
 /// FRANCE ///
 Q.fra_right_gov = 1; // Are any of the centre to right-wing parties in gov?
