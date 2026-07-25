@@ -34,23 +34,24 @@ max-cards: 6
 
 {!</div>!}
 
+<br><br>
 <ul class="decks">
     <li class="deck">
-        <a class="card" href="#" card-id="main.party_affairs" title="Party Affairs"><img class="card-img" src="img/Vorwaerts_nr_1.png"><br>Party Affairs</a>
+        <a class="card" href="#" card-id="main.party_affairs" title="Party Affairs"><img class="card-img" src="img/Vorwaerts_nr_1.png">Party Affairs</a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.inter_party_affairs" title="Inter-Party Affairs"><img class="card-img" src="img/weimar_coalition_2.jpg"><br>Inter-Party Affairs</a>
+        <a class="card" href="#" card-id="main.inter_party_affairs" title="Inter-Party Affairs"><img class="card-img" src="img/weimar_coalition_2.jpg">Inter-Party Affairs</a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.inter_party_affairs" title="Internal Affairs"><img class="card-img" src="img/Reichstagsfraktion_der_SPD.jpg"><br>Internal Affairs</a>
+        <a class="card" href="#" card-id="main.inter_party_affairs" title="Internal Affairs"><img class="card-img" src="img/Reichstagsfraktion_der_SPD.jpg">Internal Affairs</a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.gov_affairs" title="Government Affairs"><img class="card-img" src="img/reichstag_2.jpg"><br>Government Affairs</a>
+        <a class="card" href="#" card-id="main.gov_affairs" title="Government Affairs"><img class="card-img" src="img/reichstag_2.jpg">Government Affairs</a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.foreign_affairs" title="Foreign Affairs"><img class="card-img" src="img/portraits/BreitscheidRudolf.jpg"><br>Foreign Affairs</a>
+        <a class="card" href="#" card-id="main.foreign_affairs" title="Foreign Affairs"><img class="card-img" src="img/portraits/BreitscheidRudolf.jpg">Foreign Affairs</a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.pres_affairs" title="Presidential Affairs"><img class="card-img" src="img/weimar_constitution.jpg"><br>Presidential Affairs</a>
+        <a class="card" href="#" card-id="main.pres_affairs" title="Presidential Affairs"><img class="card-img" src="img/weimar_constitution.jpg">Presidential Affairs</a>
     </li>
 </ul>
