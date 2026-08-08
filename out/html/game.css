@@ -365,7 +365,6 @@ div.blank-card {
 .card-caption {
   text-align: center;
   display: block;
-  margin-top: 1em;
   font-size: 1em;
 }
 
@@ -383,7 +382,7 @@ div.blank-card {
 }
 
 .card-title {
-
+  margin-top: 1em;
 }
 
 .card-img {

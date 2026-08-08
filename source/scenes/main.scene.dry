@@ -19,9 +19,9 @@ if (boxes.length >= 2) {
     boxes[1].remove();
 }
 !}
+is-special: true
 
 {!<div class="scrollable-box">!}
-
 {!<p>!}[? if year = 1928 and month = 1 : It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality.<br><br>Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority. ?]{!</p>!}
 
 {!<p>!}[? if year = 1928 and month = 1 : The current Reichswehr Minister, Otto Gessler, resigns amid a financial scandal. Wilhelm Groener is to be appointed in his place. ?]
@@ -35,21 +35,21 @@ if (boxes.length >= 2) {
 <br><br>
 <ul class="decks">
     <li class="deck">
-        <a class="card" href="#" card-id="main.party_affairs" title="Party Affairs"><img class="card-img" src="img/Vorwaerts_nr_1.png">Party Affairs</a>
+        <a class="card" href="#" card-id="main.party_affairs" title="Party Affairs"><img class="card-img" src="img/Vorwaerts_nr_1.png"><span class="card-title">Party Affairs</span></a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.inter_party_affairs" title="Inter-Party Affairs"><img class="card-img" src="img/weimar_coalition_2.jpg">Inter-Party Affairs</a>
+        <a class="card" href="#" card-id="main.inter_party_affairs" title="Inter-Party Affairs"><img class="card-img" src="img/weimar_coalition_2.jpg"><span class="card-title">Inter-Party Affairs</span></a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.inter_party_affairs" title="Internal Affairs"><img class="card-img" src="img/Reichstagsfraktion_der_SPD.jpg">Internal Affairs</a>
+        <a class="card" href="#" card-id="main.inter_party_affairs" title="Internal Affairs"><img class="card-img" src="img/Reichstagsfraktion_der_SPD.jpg"><span class="card-title">Internal Affairs</span></a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.gov_affairs" title="Government Affairs"><img class="card-img" src="img/reichstag_2.jpg">Government Affairs</a>
+        <a class="card" href="#" card-id="main.gov_affairs" title="Government Affairs"><img class="card-img" src="img/reichstag_2.jpg"><span class="card-title">Government Affairs</span></a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.foreign_affairs" title="Foreign Affairs"><img class="card-img" src="img/portraits/BreitscheidRudolf.jpg">Foreign Affairs</a>
+        <a class="card" href="#" card-id="main.foreign_affairs" title="Foreign Affairs"><img class="card-img" src="img/portraits/BreitscheidRudolf.jpg"><span class="card-title">Foreign Affairs</span></a>
     </li>
     <li class="deck">
-        <a class="card" href="#" card-id="main.pres_affairs" title="Presidential Affairs"><img class="card-img" src="img/weimar_constitution.jpg">Presidential Affairs</a>
+        <a class="card" href="#" card-id="main.pres_affairs" title="Presidential Affairs"><img class="card-img" src="img/weimar_constitution.jpg"><span class="card-title">Presidential Affairs</span></a>
     </li>
 </ul>
