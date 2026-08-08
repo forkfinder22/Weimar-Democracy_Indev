@@ -19,7 +19,6 @@ if (boxes.length >= 2) {
     boxes[1].remove();
 }
 !}
-is-special: true
 
 {!<div class="scrollable-box">!}
 {!<p>!}[? if year = 1928 and month = 1 : It is a bright time for German democracy. After a period of struggle, inflation is finally under control, and the economy is expanding steadily. In foreign policy, we have reached agreements with the Western powers and the Soviet Union that might make genuine peace a reality.<br><br>Now, the task of Social Democracy is to prepare for the next election. The bourgeois-right government of Wilhelm Marx is unpopular, and we stand to gain. Perhaps the next government will have a socialist majority. ?]{!</p>!}
@@ -53,3 +52,5 @@ is-special: true
         <a class="card" href="#" card-id="main.pres_affairs" title="Presidential Affairs"><img class="card-img" src="img/weimar_constitution.jpg"><span class="card-title">Presidential Affairs</span></a>
     </li>
 </ul>
+
+- @next_month: Continue to next month

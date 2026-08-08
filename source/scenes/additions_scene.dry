@@ -1,0 +1,21 @@
+title: What does this mod add?
+go-to: additions_top
+
+@additions_top
+title: debug
+
+- @agsoc: Agrarian Socialist faction
+- @agrcc: Agrarian Class-Consciousness
+
+@agsoc
+
+The Agrarian Socialists are a group of Socialist thinkers who seek to aid both the Industrial Worker and Rural Peasant, believing that class consciousness can be spread through the Peasant class. This group includes both revolutionaries (Like the Left faction) and reformists (Closer to the Labor faction).<br>
+<spoiler>The Agrarian Socialists faction can be unlocked after sucessfully unlocking Agrarian Class Consciousness through the Agrarian Class Consciousness card, and your rural vote is about 17%</spoiler>
+
+@agrcc
+
+The Agrarian Class Consciousness feature is interacted with through a card, which allows you to directly increase Agricultural Class Consciousness, awaken the Peasant Class (Fully making them class-conscious), or you could declare that the Peasant class is far too conservative to convert any reasonable amount of them to Socialism
+<spoiler>The Agrarian Class Consciousness card is unlocked by increasing your Agricultural Class Consciousness Score to above 5. This can be done a variety of ways, like by campaigning among the Rural class, or directly helping them through the Agricultural Policy card</spoiler>
+
+@return_add
+go-to: additions_top

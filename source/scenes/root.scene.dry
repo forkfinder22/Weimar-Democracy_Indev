@@ -1,6 +1,6 @@
 title: Root Scene
 new-page: true
-go-to: post_event if started = 1; start_menu if started = 0
+go-to: main if started = 1; start_menu if started = 0
 
 @start_menu
 new-page: true
@@ -13,6 +13,7 @@ go-to: start_menu_2
 - @start: Start game
 - @election_simulation: Election simulation
 - @credits: Credits
+- @additions: What does this mod add?
 - @game_over.achievements
 
 
@@ -413,6 +414,7 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Hindenburg";
+Q.spd_president = 0;
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Marx";
 Q.chancellor_party = 'Z';
@@ -805,6 +807,14 @@ Q.stampfer_advisor = 0; // Friedrich Stampfer
 Q.kopp_advisor = 0; // Leon Kopp
 Q.kraus_advisor = 0; // Conrad Kraus
 Q.schwarz_advisor = 0; // Adler Schwarz 
+
+/// Next month stuff
+Q.party_choice = 0;
+Q.interparty_choice = 0;
+Q.internal_choice = 0;
+Q.gov_choice = 0;
+Q.pres_choice = 0;
+Q.foreign_choice = 0;
 !}
 set-bg: img/map_2.jpg
 new-page: true

@@ -1,0 +1,4 @@
+title: Next Month 
+choose-if: party_choice = 1 and interparty_choice = 1 and internal_choice = 1 and (gov_choice = 1 or not spd_in_government) and (pres_choice = 1 or not spd_president) and (foreign_choice = 1 or not foreign_minister_party = "SPD")
+on-arrival: month_actions = 1
+go-to: post_event

@@ -638,3 +638,14 @@ newsopt {
   overflow-y: auto;
   /* Enable vertical scrolling */
 }
+
+spoiler {
+  background-color: black;
+  color: black;
+  cursor: help;
+}
+
+spoiler:hover {
+  background-color: transparent;
+  color: inherit;
+}
