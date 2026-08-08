@@ -1,6 +1,5 @@
 title: Next month
 set-bg: img/map_2.jpg
-is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - an action is available.';
@@ -20,7 +19,6 @@ if (boxes.length >= 2) {
     boxes[1].remove();
 }
 !}
-max-cards: 6
 
 {!<div class="scrollable-box">!}
 

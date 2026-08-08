@@ -330,7 +330,7 @@ a.card {
   height: 150px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   border: 10px solid var(--card-border-color);
-  margin-bottom: 10em;
+  margin-bottom: 1em;
   position: relative;
 }
 a.card:hover {
@@ -365,6 +365,7 @@ div.blank-card {
 .card-caption {
   text-align: center;
   display: block;
+  margin-top: 1em;
   font-size: 1em;
 }
 
@@ -379,6 +380,10 @@ div.blank-card {
   border: 1px solid var(--border-color);
   background-color: var(--content-bg-color);
   left: 105%;
+}
+
+.card-title {
+
 }
 
 .card-img {
