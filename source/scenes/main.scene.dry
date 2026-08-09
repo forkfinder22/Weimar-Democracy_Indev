@@ -53,3 +53,8 @@ if (boxes.length >= 2) {
 </ul>
 
 - @next_month: Continue to next month
+- @main_reset: This page is broken!
+
+@main_reset
+subtitle: This button might help reset the page if it breaks...
+go-to: main

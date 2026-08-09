@@ -329,11 +329,19 @@ if (Q.den_relation >= 7 && Q.den_tension <= 30) {
     }
     Q.norsch_unlock_prog = 0;
 }
+
+if (Q.fagt_seen = 1) {
+    Q.foreign_choice = 1;
+}
+if (Q.gagt_seen = 1) {
+    Q.gov_choice = 1;
+}
 !}
-view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
+choose-if: spd_in_government = 1 and foreign_minister_party = "SPD" and foreign_choice = 0
 card-image: img/portraits/BreitscheidRudolf.jpg
 go-to: fp_menu
-#subtitle: International relations and dealing with Versailles.
+unavailable-subtitle: [? if not spd_in_government : The SPD isn't in government ?][? if foreign_minister_party != "SPD" : The SPD does not control the Foreign Ministry ?][? if foreign_choice != 0 : The SPD has already taken an action regarding the foreign ministry ?]
+
 
 = Foreign Policy
 

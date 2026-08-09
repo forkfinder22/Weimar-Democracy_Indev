@@ -1,4 +1,10 @@
 title: Foreign Affairs Director
 new-page: true
+on-arrival: fagt_seen = 1 if not fagt_seen
 
-WIP
+- @foreign_policy
+- @return_fagt
+
+@return_fagt
+on-arrival: fagt_seen = 0 if (fagt_seen != 0 and foreign_choice = 0)
+go-to: return
