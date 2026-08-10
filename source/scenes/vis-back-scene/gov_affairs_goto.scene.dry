@@ -1,4 +1,26 @@
 title: Government Affairs Director
 new-page: true
+on-arrival: gagt_seen = 1 if not gagt_seen
 
-WIP
+- @agricultural_policy
+###- @coalition_affairs
+###- @constitutional_reform
+###- @economic_democracy
+###- @economic_policy
+###- @education_science
+###- @fiscal_policy
+###- @homosexual_rights
+###- @judiciary
+###- @labor_affairs
+###- @labor_rights
+###- @military_policy
+###- @police
+###- @shuffle_cabinet
+###- @social_welfare
+###- @war_guilt
+###- @womens_rights
+- @return_gagt
+
+@return_gagt
+on-arrival: gagt_seen = 0 if (gagt_seen != 0 and gov_choice = 0)
+go-to: return

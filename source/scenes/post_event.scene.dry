@@ -585,6 +585,20 @@ if (Q.agr_cc >= 12 && Q.agr_awakened) {
 /// AGRARIAN SOCIALIST UPDATE |||||||| ///
 /// AGRARIAN SOCIALIST UPDATE |||||||| ///
 /// ---------------------------------- ///
+/// Decks Rework ///
+/// Decks Rework ///
+Q.party_choice = 0;
+Q.interparty_choice = 0;
+Q.internal_choice = 0;
+Q.gov_choice = 0;
+Q.pres_choice = 0;
+Q.foreign_choice = 0;
+
+Q.fagt_seen = 0;
+Q.gagt_seen = 0;
+Q.advisor_direct = 0;
+/// Decks Rework ///
+/// Decks Rework ///
 // Tells if there is an undefined
 var allVars = Object.keys(Q);
 var undefinedVars = [];

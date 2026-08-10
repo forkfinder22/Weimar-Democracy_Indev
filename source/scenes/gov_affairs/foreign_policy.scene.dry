@@ -3,7 +3,6 @@ new-page: true
 is-card: true
 tags: govt_affairs, cabinet
 on-arrival: {!
-Q.month_actions += 1; 
 Q.foreign_policy_timer += 6;
 
 /// ALSACE LORRAINE ///
@@ -330,11 +329,8 @@ if (Q.den_relation >= 7 && Q.den_tension <= 30) {
     Q.norsch_unlock_prog = 0;
 }
 
-if (Q.fagt_seen = 1) {
+if (Q.fagt_seen = 1 && !Q.advisor_direct) {
     Q.foreign_choice = 1;
-}
-if (Q.gagt_seen = 1) {
-    Q.gov_choice = 1;
 }
 !}
 choose-if: spd_in_government = 1 and foreign_minister_party = "SPD" and foreign_choice = 0

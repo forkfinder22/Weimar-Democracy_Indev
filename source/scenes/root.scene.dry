@@ -818,6 +818,7 @@ Q.foreign_choice = 0;
 
 Q.fagt_seen = 0;
 Q.gagt_seen = 0;
+Q.advisor_direct = 0;
 !}
 set-bg: img/map_2.jpg
 new-page: true
