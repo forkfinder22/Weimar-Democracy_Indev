@@ -6,5 +6,6 @@ on-arrival: fagt_seen = 1 if not fagt_seen
 - @return_fagt
 
 @return_fagt
+title: Back to Main
 on-arrival: fagt_seen = 0 if (fagt_seen != 0 and foreign_choice = 0)
 go-to: return
