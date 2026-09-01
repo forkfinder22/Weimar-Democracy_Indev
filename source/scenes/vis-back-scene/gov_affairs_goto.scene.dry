@@ -22,5 +22,6 @@ on-arrival: gagt_seen = 1 if not gagt_seen
 - @return_gagt
 
 @return_gagt
+title: Back to Main
 on-arrival: gagt_seen = 0 if (gagt_seen != 0 and gov_choice = 0)
 go-to: return
